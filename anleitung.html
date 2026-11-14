@@ -1,0 +1,618 @@
+<!doctype html>
+<!-- cc-guide:bundled -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creator Civilizations – Anleitung</title>
+<link rel="alternate" hreflang="en" href="guide_en.html">
+<style>
+  :root { color-scheme: light dark; --bg:#eef2ea; --fg:#1d2820; --card:#fff; --line:#d2dbcd; --head:#e1eedc; --accent:#3e7a36; --muted:#5d6b60; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141a15; --fg:#e4ebe1; --card:#1d251e; --line:#33402f; --head:#24301f; --accent:#79b86d; --muted:#9fae9b; } }
+  body { font: 16px/1.55 system-ui, sans-serif; max-width: 58rem; margin: 2rem auto; padding: 0 1rem; color: var(--fg); background: var(--bg); }
+  a { color: var(--accent); }
+  h1 { font-size: 1.7rem; margin-bottom: .2rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.2rem; border-bottom: 2px solid var(--accent); padding-bottom: .2rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.4rem; }
+  code { background: var(--card); padding: .05rem .3rem; border-radius: 4px; font-size: .92em; }
+  table { border-collapse: collapse; width: 100%; background: var(--card); margin: .6rem 0; }
+  th, td { text-align: left; padding: .4rem .55rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--head); }
+  tr.grp th { background: var(--accent); color: var(--bg); }
+  td code { white-space: nowrap; }
+  .en { color: var(--muted); font-size: .9em; }
+  .tip { background: var(--card); border-left: 4px solid var(--accent); padding: .6rem .9rem; margin: 1rem 0; }
+  nav { background: var(--card); padding: .6rem .9rem; border-radius: 6px; }
+  nav a { margin-right: .9rem; white-space: nowrap; }
+  .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+  details { margin: .6rem 0; }
+  summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: .3rem 0; }
+  .langlink { border: 1px solid var(--line); border-radius: 6px; padding: .1rem .6rem; text-decoration: none; background: var(--card); }
+  @media (max-width: 640px) { table { display: block; overflow-x: auto; } td code { white-space: normal; } }
+</style>
+</head>
+<body><div style="background:#2b2f3a;color:#fff;padding:10px 16px;font:15px/1.4 sans-serif">Online-Kopie der Anleitung, die in der Mod steckt (<code>/guide</code>). <a style="color:#ffd54a" href="https://www.curseforge.com/minecraft/mc-mods/creator-civilizations">Creator Civilizations auf CurseForge laden</a> · <a style="color:#ffd54a" href="guide_en.html">English</a></div>
+<p class="top"><span>Live-Seite (im Spiel: <code>/live</code>)</span>
+<a class="langlink" href="guide_en.html" hreflang="en" lang="en">English version</a></p>
+<h1>Creator Civilizations – Anleitung</h1>
+<p>Auf dem Server leben 32 fiktive KI-Figuren (16 deutsch, 16 englisch). Sie überleben,
+bauen, gründen Siedlungen, handeln, stellen Challenges und reden mit dir – per Chat und per Sprache.</p>
+<div class="tip"><b>Alle Creator auf diesem Server sind fiktive KI-Figuren ohne Verbindung zu realen Personen.</b> Namen, Persönlichkeiten
+und Stimmen sind erfunden bzw. synthetisch und niemandem nachgebildet; fragst du einen Creator, sagt er dir das auch.</div>
+<nav><a href="#idee">Idee &amp; Ziel</a><a href="#schnellstart">Schnellstart</a><a href="#welt">Dorfleben</a><a href="#kette">Drachenkette</a><a href="#kampf">Kampf</a><a href="#neu">Neu</a><a href="#fehlersuche">Fehlersuche</a>
+<br><span class=en>Nachschlagen:</span> <a href="#reden">Reden</a><a href="#themen">Themen</a><a href="#befehle">Aufträge</a><a href="#challenges">Challenges</a><a href="#kommandos">Alle Befehle</a><a href="#creator">Die Creator</a></nav>
+
+<h2 id="idee">Idee &amp; Ziel</h2>
+<p><b>Die Idee:</b> ein Minecraft-Server, auf dem die Welt nicht auf dich wartet. Die Creator spielen Survival so, wie Spieler es tun – mit leerem Inventar anfangen, Holz schlagen, Werkzeug bauen, Erz suchen, ein Zuhause errichten, Nächte überleben. Aus ihrem Spiel entsteht alles andere von selbst: Nachbarn werden Freunde oder Feinde, Gruppen gründen Siedlungen, die wachsen, es wird gehandelt, gestritten, sich verbündet und gekämpft.</p>
+<p><b>Das Ziel:</b> ein lebendiges SMP, auch wenn nur wenige Menschen spielen. Viele Server sterben daran, dass nichts passiert. Hier passiert immer etwas, auch während du weg bist: Die Welt läuft weiter, und die Chronik (jeden Morgen im Chat, jederzeit mit <code>/creator news</code>) erzählt dir, was los war. Du entscheidest, wie du mitspielst – mitbauen, handeln, einer Gruppe beitreten, einen Creator zum Duell fordern oder einfach zusehen.</p>
+<p><b>Das Spielziel der Creator:</b> das Spiel durchspielen – bis zum Enderdrachen und darüber hinaus ins äußere End. Zuerst brauchen die Siedlungen ein funktionierendes Dorf; die Expeditionsführer arbeiten sich derweil die Drachenkette hinauf.</p>
+<p><b>Die Grundregeln, auf denen alles aufbaut:</b></p>
+<ul>
+  <li><b>Fair wie ein Spieler.</b> Creator teleportieren nie und bekommen nichts geschenkt: Jeder Block, jedes Werkzeug, jede Rüstung ist echt abgebaut, hergestellt oder geschmolzen.</li>
+  <li><b>Niemand wird gezwungen.</b> Kein Zwangs-PvP, kein Zwangsbeitritt, kein Zwangs-Voice-Chat. Ablehnen hat keine Nachteile. Creator greifen dich nie von sich aus an.</li>
+  <li><b>Ehrlich.</b> Es sind erfundene KI-Figuren, und sie sagen das auch, wenn du fragst. Ihre Stimmen sind synthetisch und niemandem nachgebildet.</li>
+  <li><b>Du behältst das letzte Wort.</b> Creator machen Vorschläge (Gruppen, Einladungen, Kriege); Befehle nehmen sie nur von ihrem Besitzer oder einem Operator an.</li>
+</ul>
+
+<h2 id="schnellstart">Schnellstart</h2>
+<ol>
+  <li>Die Mod auf den <b>Server und auf jeden Spieler-Client</b> legen — eine Datei für beide Seiten (Einzelspieler: einfach im Spiel installieren).</li>
+  <li>Dem Server beitreten oder die Einzelspielerwelt öffnen. <b>Einzelspieler:</b> als Besitzer der Welt schreibst du <code>go</code> auch ohne Cheats.</li>
+  <li>Die Creator warten eingefroren im <b>Startkreis</b> am Spawn. Ein <b>Operator</b> schreibt <code>go</code> (oder <code>los</code>/<code>start</code>) allein in den Chat — dann ziehen sie los: Holz, Werkzeug, Essen, ein Unterschlupf vor der ersten Nacht.</li>
+  <li>Einen Creator sprichst du an, indem du seinen <b>Namen</b> an den Anfang oder ans Ende der Chatzeile setzt (<i>„…, was hast du vor?“</i>) — mit Namen antwortet er immer. Stimmen ohne Zusatz-Mod, sobald Operator oder Weltbesitzer zustimmen (Hinweis im Chat; Lautstärke: <i>Optionen → Musik &amp; Geräusche → Erzähler/Stimme &amp; Creator</i>).</li>
+  <li><code>/creator menu</code> zeigt, was du gerade tun kannst; <code>/live</code> öffnet die Live-Seite mit Karte, <code>/creator situation</code> fasst die Lage der Welt zusammen, <code>/guide</code> verlinkt die ganze Anleitung.</li>
+</ol>
+<div class="tip"><b>Mitspielen:</b> die Mod in deinem Spiel installieren (dieselbe Datei wie auf dem Server), dann beitreten. Ansprechen zum Beispiel: <code>fernblick, was hast du vor?</code> – die Live-Seite (im Spiel: <code>/live</code>) zeigt, wer was macht.</div>
+<h3>Mehr zum Start</h3>
+<ul>
+  <li>Im Startkreis sind die Creator unverwundbar, ohne Ausrüstung und für Monster unsichtbar.</li>
+  <li>Starten dürfen Operatoren und wer in <code>start.ownerUuids</code> steht – im Einzelspieler auch der Besitzer der Welt, ohne Cheats. Das Wort
+      (<code>go</code>, <code>los</code> oder <code>start</code>) muss allein in der Zeile stehen. Dann ziehen alle los: Holz, Werkbank,
+      Werkzeug, Essen, Stein, Unterschlupf vor der ersten Nacht (ein Loch im Boden; am Wasser ohne Weg an Land mauern sie sich an Ort
+      und Stelle ein).</li>
+  <li><b>Voice Chat</b> (im Modpack dabei) brauchst du nur, um <b>mit ihnen zu sprechen</b>: Taste <b>V</b> öffnet die
+      Einstellungen, Mikrofon wählen (Push-to-talk oder Sprachaktivierung).</li>
+</ul>
+<h3>Creator finden</h3>
+<p><code>/creator info &lt;name&gt;</code> nennt die Koordinaten, <b>F3</b> zeigt deine eigenen.
+<b>Nachts</b> sind die meisten unsichtbar: sie graben sich ein Loch, decken es ab und kommen im Morgengrauen wieder heraus.
+Die <b>Tab-Taste</b> zeigt, wer gerade online ist. Außerhalb des Spiels: die Live-Seite (im Spiel: <code>/live</code>) mit Karte.</p>
+<div class="tip">Neu anfangen: <code>/creator start reset</code> (Operator) setzt Creator, Siedlungen, Beziehungen und Chronik zurück
+und baut den Startkreis <b>dort auf, wo du stehst</b>. Danach wieder <code>go</code>.</div>
+
+<h2 id="welt">Dorfleben</h2>
+<p>Creator schließen Freundschaften (und Feindschaften), tun sich zusammen und gründen Siedlungen — vom matschigen Lager bis zur Großstadt (Lager → Außenposten → Dorf → Stadt → Großstadt). Die Welt läuft weiter, auch wenn niemand online ist.</p>
+<ul>
+  <li>Ein funktionierendes Dorf braucht je Mitglied ein Bett, Vorrat für ein paar Tage, bewässerte Felder und mindestens drei Dorfbauwerke — die Bauern verteilen sich auf eigene Felder, ein Creator holt die Herde ins Gehege. Den Stand zeigt die Live-Seite.</li>
+  <li>Bauen im Stil des Bioms — oder nach deinen eigenen <code>.nbt</code>-/<code>.schem</code>-Bauplänen</li>
+  <li>Gemeinsames Lager, Handel, Geschenke, Nahrungshilfe zwischen Siedlungen — wirf einem Creator etwas Brauchbares hin, und eure Beziehung steigt</li>
+  <li>Verteidigungsnächte gegen Monsterwellen — der Anführer kündigt sie am Abend an, die Bewaffneten sammeln sich in der Mitte</li>
+  <li>Herausforderungen und Clan-Einladungen — auch für dich</li>
+  <li>Krieg nur mit deiner Zustimmung: Ablehnen ist folgenlos, <code>/creator war never</code> schaltet Kriegserklärungen an dich ganz ab</li>
+</ul>
+<h3>Im Einzelnen</h3>
+<ul>
+  <li><b>Die Welt läuft weiter</b>, auch wenn niemand online ist: Creator arbeiten, freunden sich an und gründen Siedlungen,
+      während du weg bist. Was passiert ist, steht in der Chronik (<code>/creator news</code>, jeden Morgen auch im Chat).</li>
+  <li><b>Gruppen</b>: Creator, die nahe beieinander sind, schlagen Gruppen vor (<code>/creator group list</code>). Angenommen
+      gründen sie eine Siedlung. Nachbarn freunden sich an – wer höchstens 64 Blöcke voneinander entfernt ist (auch am
+      Hang), und wer sich unterwegs begegnet (32 Blöcke). Ein Anführer (Führung ab
+      0,65) gründet mit seinen Freunden; in einem großen Viertel können so mehrere Siedlungen entstehen. Ist eine Gruppe im Schnitt
+      freundlich (Beziehung 21), gründet sie auch von selbst, und Freunde des Anführers treten bei. Die Liste zeigt je
+      Vorschlag, wie weit die Gruppe ist („Ø Beziehung 14/21“).</li>
+  <li><b>Wo gegründet wird</b>: am Zuhause des Anführers oder eines anderen Mitglieds – dort, wo im Umkreis von 64 Blöcken
+      Wasser, Holz und Nahrung sind. Nahrung sind Tiere, Felder oder Gras und Farn, aus denen die Farmer ein Weizenfeld
+      anlegen. Liegt kein Wasser neben pflügbarer Erde, holt der Farmer es im Eimer (fehlt ihm das Eisen dafür, baut er erst
+      Erz ab) und gräbt nahe dem Zuhause ein Wasserloch für sein Feld. Stufen: Lager → Außenposten → Dorf → Stadt → Großstadt,
+      jede mit messbaren Zielen (<code>/creator civ info &lt;id&gt;</code>): Mitglieder, Betten, Truhenplätze, Essensvorrat,
+      Verteidiger, Häuser. Der Essensvorrat zählt für die Mindestbesetzung der Stufe – eine große Gruppe braucht für den
+      Außenposten nicht mehr Brot als eine kleine.</li>
+  <li><b>Häuser</b>: Baumeister sammeln das Material, wo sie gerade sind, und gehen mit vollem Gepäck heim – aber nur, wenn
+      sie vor dem Abend ankommen. Ist das Gelände uneben, ebnen sie ein Stück ein (Erde, Stein, Bäume weg, kleine Löcher
+      auffüllen), bevor sie bauen.</li>
+  <li><b>Verteidigungsnächte</b>: in manchen Nächten (etwa jede siebte, frühestens zwei Tage nach der Gründung, nur wenn ein Spieler in
+      160 Blöcken ist) greifen drei Monsterwellen eine Siedlung an. Der Anführer kündigt es am Abend an, die Bewaffneten
+      sammeln sich in der Mitte. Ergebnis am Morgen in Chat und Chronik.</li>
+  <li><b>Schlafen</b>: wer ein Haus mit eigenem Bett hat, legt sich nachts hinein. Monster in der Nähe, ein Treffer oder
+      Ansprechen wecken ihn; morgens steht er auf.</li>
+  <li><b>Geschenke</b>: wirf einem Creator etwas Brauchbares für sein Vorhaben hin (Holz, Stein, Eisen, Kohle, Essen) – er
+      bedankt sich, und eure Beziehung steigt (einmal am Tag). Wer im Bündnis ist und trotzdem angreift oder ein Haus
+      abreißt, bricht den Vertrag: das kostet zusätzlich.</li>
+  <li><b>Festgefahren?</b> Kommt ein Creator minutenlang nicht weiter, ruft er im Chat mit Koordinaten um Hilfe
+      (höchstens alle 20 Minuten).</li>
+  <li><b>Redstone</b>: Auf Zuruf baut ein Creator eine <b>Auto-Schmelze</b> – eine Säule aus Truhe,
+      Trichter, Ofen und Trichter (zwei Trichter = 10 Eisen). Erz kommt oben hinein, die Barren landen unten in der Truhe.
+      Technik-Creator (Gearbeard, Giebelbauer, Glutherz, Tauschmeister, Tüftelkopf) bauen sie auch von selbst, wenn ihr Tagesplan
+      sonst leer ist. Eigene Bauwerke
+      sind geschützt wie das Haus: wer sie abreißt, hört es („Finger weg von meiner Auto-Schmelze!“).</li>
+  <li><b>Kissen</b>: legst du Kissen in eine Siedlung, setzen sich Creator ohne Aufgabe tagsüber eine halbe Minute darauf.</li>
+  <li><b>Tipps</b>: ab und zu erwähnt ein Creator in deiner Nähe, was du mit ihm machen kannst – was er gerade baut, dass er
+      dir etwas bauen kann, wie du seiner Siedlung beitrittst. Höchstens alle fünf Minuten, und nichts, was du schon benutzt
+      hast.</li>
+  <li><b>Wettrennen</b>: wer einen Fortschritt des Spiels als Erster in dieser Welt schafft (etwa die ersten Diamanten
+      oder die erste Eisenrüstung) oder als Erster eine neue Wirkung herausfindet (etwas an einem Tier benutzen), wird allen im Chat
+      gemeldet und steht in der Chronik.</li>
+  <li><b>Live-Seite</b>: unter live.html (im Spiel: <code>/live</code>) – im Spiel mit <code>/live</code> als anklickbarer Link, auch
+      beim Betreten des Servers – siehst du, was jeder Creator gerade macht, seine Siedlung, sein Leben und seine Fortschritte,
+      die Siedlungen mit ihren Dorf-Mindestwerten (Betten, Vorrat, bewässerter Acker, Dorfbauwerke), die letzten Tode, die
+      Chronik und wie weit die Welt auf dem Weg zum Enderdrachen ist. Dazu eine <b>Karte</b> mit dem echten Gelände (aufgebaut aus
+      dem, was Creator und Spieler gesehen haben): Mausrad oder zwei Finger zoomen, ziehen verschiebt, ein Punkt zeigt Details.
+      Die Seite aktualisiert sich alle 10 Sekunden, gibt es auf Deutsch und Englisch (Umschalter oben rechts) und passt aufs Handy.
+      Dieselbe Lage in Kurzform im Chat: <code>/creator situation</code>.
+      Die Mod liefert Seite und Anleitung selbst aus: im Einzelspieler automatisch unter <code>http://127.0.0.1:8000/</code>
+      (nur auf deinem Rechner), auf einem Server, sobald der Admin <code>"web": {"port": 8000}</code> in
+      <code>server.json</code> eingetragen hat.</li>
+  <li><b>Siedlungen wachsen</b>: wer sein Haus hat und sonst nichts zu tun hat, baut weitere Dorfbauwerke im Stil der Gegend
+      (Tiergehege, Dorfplatz …) – das Material holt er sich. Dazu <b>Schau-Bauten</b>: ein spielendes <b>Glockenspiel</b> und ein
+      <b>Blinkfeuer</b> (Fackel-Takt) am Dorf; bestellen kannst du sie auch („bau ein Glockenspiel“).</li>
+  <li><b>Lager</b>: was in den Truhen der Siedlung liegt, nehmen sich die Mitglieder für ihre Pläne – wie Mitspieler einer
+      Gruppe. Gegenstände in Truhen von Spielern rühren sie nie an.</li>
+  <li><b>Krieg</b>: Ist eine Siedlung mit dir verfeindet und hat mindestens zwei bewaffnete Mitglieder, kann sie dir den Krieg
+      erklären – das steht im Chat und in der Chronik. Er beginnt nur mit <b>deiner Zustimmung</b>: sag einem Creator der Siedlung
+      einfach „ja“ oder „nein“ (oder <code>/creator war accept &lt;id&gt;</code> / <code>/creator war decline &lt;id&gt;</code>).
+      <b>Ablehnen ist folgenlos</b>; dieselbe Siedlung fragt frühestens nach 7 Spieltagen wieder. Im Krieg verteidigen
+      höchstens 8 Kämpfer ihr Siedlungsgebiet gegen dich – nur dort, nie mit Blockschaden, Neutrale greifen sie nie an.
+      Hast du ihnen etwas gestohlen, wollen sie es zurück: wirf es einem Mitglied zu, dann ist Frieden. Vorbei ist er mit
+      „Frieden“ oder „ich gebe auf“ (oder <code>/creator war peace|surrender &lt;id&gt;</code>), wenn du den Server verlässt,
+      spätestens nach 3 Spieltagen. Willst du nie gefragt werden: <code>/creator war never</code> (zurück mit
+      <code>/creator war allow</code>). Kriege zwischen zwei Siedlungen beginnen erst, wenn ein Operator sie genehmigt
+      (<code>/creator war approve &lt;id&gt;</code>).</li>
+  <li><b>Tod</b>: das Inventar fällt wie bei einem Spieler, nach 10 Sekunden erscheint er am eigenen Bett (sonst am Weltspawn).
+      Beziehungen und Mitgliedschaften bleiben.</li>
+  <li>Creator bewegen sich wie Spieler: laufen, klettern, abbauen – kein Teleport, keine geschenkten Gegenstände.</li>
+  <li><b>Tab-Taste</b> zeigt alle Creator mit Kopf in der Spielerliste.</li>
+</ul>
+
+<h2 id="kette">Drachenkette (L1–L13)</h2>
+<p>Derweil nehmen sich die <b>Expeditionsführer</b> (★ auf der Live-Seite) das große Ziel vor: das Spiel durchspielen. Nach den Vorstufen Diamant gefunden → Lava im Eimer → Obsidian folgen 13 Stufen. Die Seitenleiste im Spiel zeigt den Stand als „n/13“, die Live-Seite je Stufe, wer sie geschafft hat; <code>/creator situation</code> fasst ihn im Chat zusammen.</p>
+<ul>
+  <li><b>Bis zum Drachen (L1–L7):</b> L1 Nether betreten → L2 Netherfestung gefunden → L3 Lohenrute → L4 Enderperlen → L5 Enderauge gefolgt → L6 Ende betreten → L7 Enderdrache besiegt</li>
+  <li><b>Nach dem Drachen (L8–L13):</b> L8 Drachenei → L9 End-Gateway durchquert → L10 Endstadt gefunden → L11 Elytra → L12 Shulkerkiste → L13 Drache neu beschworen</li>
+</ul>
+<p>Alles erarbeiten sie selbst: Sie holen Lava und Wasser in Eimern, gießen Obsidian, bauen und zünden ein Netherportal, suchen eine Festung, jagen Lohen für Lohenruten, sammeln Enderperlen, stellen Enderaugen her und folgen ihnen zur Endfestung. Ihre Siedlung hilft: <b>Versorger</b> besorgen, was dem Führer fehlt (Rüstung, Lava, Lohenrute …), und ein <b>Begleiter</b> geht mit in den Nether. Die übrigen Creator bleiben bei ihren Siedlungen.</p>
+<p>Nach dem Drachen holt das Ei nur, wer ihn erlegt hat; die anderen gehen zum End-Gateway und bauen sich zu ihm hoch, wenn es über dem Boden schwebt. Im äußeren End brücken sie mit einer Enderperle als Sicherung über die Leere, suchen eine Endstadt, erkennen ein Endschiff an Obsidian-Kiel und Drachenkopf und holen die Elytra aus der Kajüte. Danach folgen Shulkerkiste und die Neubeschwörung des Drachen.</p>
+<div class="tip"><b>In Arbeit:</b> Die Stufen nach dem Drachen sind die neuesten; mit jedem Update kommen die Führer weiter.</div>
+
+<h2 id="kampf">Kämpfen mit und gegen Creator</h2>
+<ul>
+  <li><b>Sie fangen nie an.</b> Ein Creator greift dich nur an, wenn du ihn (oder einen seiner Freunde) zuerst schlägst –
+      oder im Krieg, dem du zugestimmt hast.</li>
+  <li><b>Ein Versehen ist verziehen.</b> Triffst du als Freund einen Creator einmal im Gedränge, sagt er dir Bescheid und
+      schlägt nicht zurück; ein zweiter Treffer kurz danach gilt als Angriff.</li>
+  <li><b>Wer einen angreift, hat es mit der Gruppe zu tun.</b> Siedlungsgenossen und Freunde in der Nähe kommen dazu und
+      sagen es an („Lass Giebelbauer in Ruhe!“). Sie merken sich den Angreifer eine halbe Minute, drehen sich zu ihm um und heben
+      den Schild, wenn er näher kommt. Greifen mehrere an, nehmen sie sich den Schwächsten zuerst vor.</li>
+  <li><b>Sie kämpfen wie Spieler:</b> Sprint-Treffer, kritische Treffer aus dem Sprung und im Fallen, Axt gegen deinen
+      Schild, Schild gegen deinen Bogen, die passende Waffe gegen deine Rüstung.</li>
+  <li><b>Weglaufen oder Säule hilft nur bedingt.</b> Hat ein Creator Bogen und Pfeile, schießt er, wenn du flüchtest oder
+      höher stehst. Stehst du auf einer frisch gebauten Säule in seiner Reichweite, baut er den Block unter dir ab – aber nur
+      Blöcke, die du in der letzten Minute gesetzt hast, und nur in einem Kampf, den du angefangen oder angenommen hast.
+      Sonst baut er sich zu dir hoch. Ohne Schild weicht er deinen Pfeilen seitlich aus.</li>
+  <li><b>Sie wissen, wann sie verlieren.</b> Gegen deutlich bessere Ausrüstung ziehen sie sich zurück und sagen warum;
+      erholt kommen sie wieder. Wer gewinnt, sagt „GG“.</li>
+  <li><b>Duell-Bilanz:</b> Creator merken sich, wer wie oft gewonnen hat, und fordern Revanche („Steht 1:2 – das ändern
+      wir jetzt“). Jedes Duell steht mit Bilanz in der Chronik.</li>
+  <li><b>Angriff auf Zuruf:</b> „glutherz, greif fernblick an“ – der Besitzer (oder ein Operator) kann einen Creator auf einen
+      <b>Feind</b> ansetzen, also einen Creator, mit dem er verfeindet ist oder dessen Siedlung im Krieg mit seiner liegt.
+      Freunde und Neutrale greift er nicht an und sagt, warum. Spieler nur, wenn sie gerade selbst angreifen. Der Befehl
+      gilt eine Minute und höchstens 32 Blöcke weit.</li>
+  <li><b>Duell:</b> „gartenfritz, 1v1?“ – ist er bewaffnet und fit, bietet er an; auf „ja“ zählt er herunter und kämpft mit
+      allem, was er kann – <b>bis zum Tod</b>, ohne Abstands- oder Zeitgrenze (wer stirbt, verliert sein Inventar wie im normalen
+      Kampf). Es zählt nicht als Angriff (keine Freunde, die dazukommen). Im Kreativmodus lehnt er ab. Wer es ohne Risiko will:
+      ein <b>Kit-Duell</b> (unten) endet, sobald jemand unter zwei Herzen fallen würde, und jeder bekommt sein altes Inventar zurück.</li>
+  <li>Sie warnen dich vor Creepern, die sich an dich heranschleichen.</li>
+  <li><b>Schwierigkeit einstellen</b>: <code>/creator shield &lt;level&gt;</code> legt fest, wie oft Creator im Kampf gegen
+      DICH den Schild heben – <code>always</code> (immer, Standard), <code>often</code> (oft, 70 %), <code>sometimes</code> (manchmal, 40 %),
+      <code>rarely</code> (selten, 15 %) oder <code>never</code> (nie). Gilt nur für dich, bleibt gespeichert; gegen Monster und andere
+      Spieler ändert sich nichts.</li>
+</ul>
+
+<h3>PvP-Technik</h3>
+<p>Creator kämpfen gegen die stärksten Spieler – mit denselben Techniken und nach denselben Regeln. Sie haben dafür nur, was sie
+sich erarbeitet haben (oder was ein Kit ihnen gibt): ohne Streitkolben kein Streitkolben-Sprung, ohne Kristalle keine Explosion.</p>
+<ul>
+  <li><b>Streitkolben:</b> Mit Streitkolben und Windkugeln springen sie per Windkugel hoch und schlagen im Fallen zu, auch aus dem
+      Elytra-Sturz. Hältst du den Schild hoch, brechen sie ihn im Fall mit der Axt und schlagen im selben Augenblick mit dem Streitkolben zu
+      (<i>Stun-Slam</i>). Haben sie mehrere Streitkolben, nehmen sie den, der dir gerade am meisten schadet – Density bei hohen
+      Stürzen, Breach gegen schwere Rüstung.</li>
+  <li><b>Schild und Axt:</b> Springst du mit dem Streitkolben, heben sie rechtzeitig den Schild; zum Zuschlagen senken sie ihn. Gegen
+      deinen Schild wechseln sie kurz zur Axt und legen ihn lahm.</li>
+  <li><b>Nahkampf-Feinheiten:</b> Sprint-Reset (kurz loslassen und neu ansprinten, damit jeder Treffer wieder Rückstoß hat), kritische
+      Treffer aus dem Fallen, Rückstoß über eine Kante oder in Lava, Angel zum Heranziehen.</li>
+  <li><b>Fernkampf:</b> Bogen mit gutem Timing, <b>Armbrust</b> als Eröffnungsschuss (auch mit Feuerwerk), <b>Dreizack</b> werfen oder
+      mit Sog heranschießen, <b>Speer</b> mit Ansturm und Ausfallschritt.</li>
+  <li><b>Explosionen:</b> <b>Endkristalle</b> und <b>Respawn-Anker</b> setzen sie wie Crystal-PvP-Spieler ein, auch TNT-Loren. Umgekehrt
+      halten sie gegen deine Kristalle, Anker und gezündetes TNT den Schild zur Quelle, zerschlagen einen Kristall vor der Zündung oder gehen
+      auf Abstand.</li>
+  <li><b>Flucht und Heilung:</b> Enderperle oder <b>Chorusfrucht</b> zum Absetzen, Windkugel-Sprung weg, Heil- und Stärketränke,
+      Goldäpfel. Ein <b>Totem</b> halten sie in der zweiten Hand bereit, wenn es eng wird.</li>
+  <li><b>Konter auf Streitkolben-Springer:</b> ein Wurftrank <b>Sanfter Fall</b> auf dich nimmt deinem Sprung die Wucht.</li>
+  <li><b>Netze, Lava, Wasser:</b> Sie setzen Spinnweben unter dich, bevor sie springen, schneiden sich selbst aus Netzen frei, gießen
+      Lava vor dich und fangen einen tiefen Sturz mit dem Wassereimer oder einer Windkugel ab.</li>
+  <li><b>Im Kampf wird nicht gesammelt</b> – erst wenn der Gegner weg ist.</li>
+  <li><b>Gleiche Regeln wie für dich:</b> Mit erhobenem Schild, beim Essen oder Bogenspannen laufen sie langsam wie du; sprinten
+      nur satt und nicht blind; Windkugeln und Perlen haben dieselbe Abklingzeit; der Speer braucht Tempo wie bei dir. Sie treffen
+      nur, was sie sehen – durch Wände schlägt niemand.</li>
+</ul>
+<h3>Kampfstile – jeder Kampf ist anders</h3>
+<p>Jeder Creator hat einen Lieblingsstil, der zu seiner Persönlichkeit passt, und würfelt zu Beginn jedes Kampfes gegen dich, wie er
+diesmal vorgeht: <b>Ansturm</b> (drängt in den Nahkampf, zieht dich heran), <b>Schütze</b> (Abstand, Bogen und Armbrust, ausweichen),
+<b>Konter</b> (Schild, früh heilen, wenig Risiko), <b>Tüftler</b> (Kristalle, Anker, Lava, Netze, Fallen) oder <b>Akrobat</b>
+(Streitkolben-Sprünge, Elytra). Liegt er deutlich zurück, <b>wechselt er den Stil</b> (höchstens zweimal je Kampf).</p>
+<p><b>Er liest deine Masche:</b> Triffst du ihn immer wieder auf dieselbe Art – Streitkolben, Fernkampf, Sprengstoff oder Feuer –, merkt
+er es, stellt sich darauf ein und weiß es beim nächsten Kampf noch („Wie letztes Mal – Sprengstoff. Diesmal bin ich vorbereitet.“).
+Abwechslung lohnt sich also auch für dich.</p>
+<h3>Kampfgespräch – sie erklären, was passiert</h3>
+<p>Creator kommentieren den Kampf: den Trick, den sie gerade benutzt haben (Stun-Slam, Kristall, Perlenflucht …), deinen harten
+Treffer, eine Trefferserie, den Stilwechsel. Nach dem Kampf sagen sie den Trefferstand, geben einen Tipp, wie man ihre Siegtechnik kontert,
+und kündigen die Revanche an. Fragen kannst du jederzeit: <code>wie hast du das gemacht?</code> erklärt den letzten Trick,
+<code>wie kontere ich das?</code> den passenden Konter.</p>
+
+<h3>Kits für verabredete Kämpfe</h3>
+<p>Im Alltag erarbeiten sich Creator ihre Ausrüstung selbst. Für Duelle, Turniere oder angekündigte Kriege bekommen <b>beide Seiten
+dasselbe Kit</b> (nur Operatoren): <code>/kit pvp_mace Glutherz</code> und <code>/kit pvp_mace</code> für dich selbst.
+Einfacher als Operator: <b>„Kit-Duell?“</b> (oder „Kit-Duell Schwert?“, Bollwerk, Fernkampf, Taktiker) – auf „ja“ bekommen beide dasselbe
+Kit; wer unter zwei Herzen fallen würde, hat verloren, und nach dem Duell hat jeder wieder genau sein altes Inventar.</p>
+<table><tr><th>Kit</th><th>Inhalt (alle mit Netherit-Rüstung Schutz IV, Schild, 3 Totems, Goldäpfeln, Perlen, Wassereimer, Netzen, Axt)</th></tr>
+<tr><td><code>pvp_mace</code></td><td>zwei Streitkolben (Density V + Wind Burst, Breach IV), 64 Windkugeln</td></tr>
+<tr><td><code>pvp_sword</code></td><td>Netherit-Schwert Schärfe V, Heil-Wurftränke, Stärketränke</td></tr>
+<tr><td><code>pvp_bulwark</code></td><td>Brustpanzer mit Dornen, zwei Totems mehr, verzauberter Goldapfel</td></tr>
+<tr><td><code>pvp_ranged</code></td><td>Bogen (Stärke V, Schlag II, Flamme), Armbrust, 64 Pfeile, Speer mit Lunge III</td></tr>
+<tr><td><code>pvp_tactician</code></td><td>Schwert, Schadens- und Langsamkeits-Wurftränke, Lava-Eimer, Feuerzeug, Windkugeln</td></tr>
+<tr><td><code>pvp_basic</code></td><td>nur die Grundausstattung</td></tr>
+</table>
+<p>Tipp: Nach einem Kampf zeigt die Kampf-Nachbetrachtung (Server-Werkzeug <code>tools/fight_review.py</code>), warum jemand verloren hat
+und was es verhindert hätte.</p>
+
+<h2 id="neu">Neu</h2>
+<p>Seit <b>1.0</b> wird jedes Update auf unserem Live-Server geprüft: Creator, Aufträge, Truhen und Siedlungen müssen es überstehen. Vor Updates trotzdem die Welt sichern.
+Feedback und Fehlerberichte im <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#bugs, #ideas).</p>
+<h3>Neu in 1.0.4</h3>
+<ul>
+  <li>Einzelspieler: automatisch an unter `http://127.0.0.1:8000/` (nächster freier Port bis 8009), nur auf dem eigenen Rechner.</li>
+  <li>Server: ab Werk aus. Mit `"web": {"port": 8000}` in `config/creatorcivilizations/server.json` einschalten (optional `"bind"` und `"publicUrl"`). Belegt schon ein anderer Webserver den Port, nutzt die Mod diesen weiter.</li>
+  <li>Nur lesend: nur Dateien im Ordner `client/`, nur GET und HEAD.</li>
+  <li>Rundmeldungen (Start, Wettrennen, Erstleistungen, Chronik) kommen in der Spielsprache jedes Spielers statt in der Chroniksprache des Servers.</li>
+  <li>Live-Seite und Anleitung sind ab der ersten Sekunde da, kein „nicht gefunden“ direkt nach dem Weltstart.</li>
+  <li>Jeder neue Spieler wird von einem Creator begrüßt, auch auf Welten, auf denen die Führer schon weit sind.</li>
+  <li>Die Erinnerung „schreib go“ erscheint 10 Sekunden nach dem Betreten statt bis zu zwei Minuten später.</li>
+  <li>Zu einer Expedition lädt nur noch der nächste Führer ein, einmal je Ziel, und nie mehr, wenn man schon Begleiter ist. Vorher fragten alle Führer in der Nähe gleichzeitig.</li>
+  <li>In der Abendrunde hört ein Spieler jedes Ereignis einmal, auch wenn mehrere Dörfer nah sind.</li>
+  <li>Eine zweite Welt in derselben Sitzung zeigt auf der Live-Seite nicht mehr die Tode der ersten.</li>
+  <li>Führer schießen nicht mehr durch einen Freund: Steht ein anderer Creator oder ein Spieler in der Schusslinie, bleibt der Bogen gespannt, bis die Linie frei ist (ein Laborlauf verlor 24 Enderperlen durch eigene Pfeile am Lohen-Spawner).</li>
+  <li>Keine Suche nach Eichen im Nether mehr, nur Karmesin- und Wirrstiele.</li>
+  <li>Am Festungspfeiler steigen sie zur Brücke hinauf, statt am Fuß umzukehren.</li>
+  <li>Rückweg aus dem End: Ein beschworener Drache zählt für jeden Creator in der Arena, ein später Führer hält Abstand zu einer fremden Beschwörung und kämpft erst gegen einen lebenden Drachen, und wer auf dem Heimweg strandet, wirft sich mit einer Perle zurück an Land.</li>
+  <li>Mit abgenutzter Spitzhacke geht ein Führer heim, bevor sie im Nether bricht; ein Sprung gilt nicht mehr als Sturz in die Leere.</li>
+  <li>Dorfbauwerke werden wieder fertig. Seit einigen Tagen hing jedes Dorf an einem Bau, der weiße Terrakotta braucht, die es nur in Tafelbergen gibt; Dörfer wählen solche Bauten jetzt nur, wenn sie eine Quelle kennen, und eine vergebliche Suche wird nicht den ganzen Tag wiederholt.</li>
+  <li>Die Großstadt-Stufe ist erreichbar: Die verlangte Zahl an Häusern richtet sich nach der Zahl der Mitglieder (wie bei den Betten), und bewaffnet aufgebrochene Mitglieder zählen auf Expedition für die Verteidigung.</li>
+  <li>Keine endlose Schmelzschleife mehr bei vollem Erztrichter, und beim Abbau von Gerüsten wird ein Block mit jemandem daneben übersprungen, statt immer wieder daran zu scheitern.</li>
+  <li>Das Bett eines Mitglieds im Nether oder im End zählt wieder fürs Dorf, auch nach einem Neustart.</li>
+  <li>Wer während eines Umzugs unterwegs war, bekommt das neue Zuhause.</li>
+  <li>Ein neues Feld zu bewässern leert nicht mehr das Nachbarfeld; gesät wird von überall, wo der Creator hinreicht.</li>
+  <li>Der Tod eines Führers wird als richtiger Satz auf Deutsch und Englisch gemeldet, keine englischen Todesmeldungen mehr mitten im deutschen Satz.</li>
+  <li>Dorfstufen zeigen ihren Namen statt eines Rohwerts, Siedlungsnamen nach s, x und z stimmen („Markthans’ Siedlung“), Krieg und Clan richten sich nach der Sprache jedes Spielers, und die Chronik hat für Expeditionsberichte echten englischen Text.</li>
+</ul>
+
+<h2 id="fehlersuche">Fehlersuche</h2>
+<h3>Beim Beitreten</h3>
+<p><b>Ich werde beim Betreten eines Servers getrennt.</b><br><i>„Dieser Server braucht die Mod Creator Civilizations … auch auf deinem Client“</i>: die Mod im Spiel installieren (Link in der Meldung, oder die <code>.mrpack</code> des Servers). <i>„Deine Creator-Civilizations-Version (…) passt nicht zum Server (…)“</i>: die Mod auf die Version des Servers aktualisieren. Verschiedene Versionsnummern sind in Ordnung, solange sich für Clients nichts geändert hat — der Server weist nur Clients ab, die wirklich nicht passen. Eine graue Chatzeile <i>„Creator Civilizations ist auf diesem Server nicht installiert“</i> heißt: der Server hat die Mod nicht — du kannst dort normal spielen, nur ohne Creator (einmal je Server; <code>"serverModHint": false</code> in <code>config/creatorcivilizations/client.json</code> schaltet sie ab).</p>
+<p><b>Die Creator stehen eingefroren im Kreis.</b><br>Das ist der Startkreis. Ein Operator (oder wer in <code>start.ownerUuids</code> steht) schreibt <code>go</code>, <code>los</code> oder <code>start</code> in den Chat — genau das Wort. Im Einzelspieler darf der Besitzer der Welt <code>go</code> auch ohne Cheats schreiben. <code>/creator start status</code> zeigt den Stand.</p>
+<p><b>Ich höre keine Stimmen.</b><br>Regler <i>Optionen → Musik &amp; Geräusche → Erzähler/Stimme &amp; Creator</i> prüfen (die Gesamtlautstärke wirkt mit). Das Stimmenpaket lädt der Server erst, wenn ein Operator oder der Besitzer der Einzelspielerwelt zugestimmt hat (<code>/creator assets status</code> zeigt die Wahl, <code>/creator assets accept</code> erteilt sie), dann im Hintergrund (Log: <code>[assets] … %</code>); ohne Zustimmung oder wenn das scheitert, schreiben die Creator im Chat. Hörweite: <code>voice.range</code> Blöcke (Standard 24).</p>
+<p><b>Brauche ich Simple Voice Chat?</b><br>Nein — zum Hören braucht es nichts extra. Simple Voice Chat ist nur zum <i>Sprechen</i> per Mikrofon und für die Gruppe <i>Creator-Funk</i> (<code>/creator radio</code>). Dann UDP-Port 24454 am Server freigeben.</p>
+<h3>Im Spiel</h3>
+<p><b>Nachts finde ich niemanden.</b><br>Nachts graben sich die meisten ein Loch, decken es ab und kommen im Morgengrauen wieder heraus. <code>/creator info &lt;name&gt;</code> nennt die Koordinaten, Tab zeigt, wer online ist, <code>/live</code> öffnet die Live-Karte.</p>
+<p><b><code>/live</code> sagt, die Live-Seite sei nicht eingeschaltet.</b><br>Auf einem Server ist die Live-Seite aus, bis der Admin sie einschaltet (siehe <i>Für Server-Admins</i>); bis dahin verlinkt <code>/guide</code> die Anleitung online. Im Einzelspieler ist sie immer an, nur auf dem eigenen Rechner.</p>
+<p><b>Ein Creator versteht mich nicht.</b><br>Jeder Creator versteht Deutsch, Englisch und Spanisch und antwortet in der Sprache, in der du schreibst. Den Namen an den Anfang oder ans Ende der Zeile setzen — ohne Namen antworten höchstens Creator in der Nähe.</p>
+<p><b><code>/creator list</code> oder <code>/creator say</code> sagt, Creator seien aufgestellt, aber nicht geladen.</b><br>Normal, wenn kein Spieler in der Nähe ist oder der Server pausiert — ihre Gegend ist nicht geladen. Sie sind trotzdem da.</p>
+<p><b>PvP ist zu schwer.</b><br><code>/creator shield &lt;always|often|sometimes|rarely|never&gt;</code> legt fest, wie oft Creator gegen <i>dich</i> den Schild heben (nur gegen dich, gespeichert).</p>
+<h3>Für Server-Admins</h3>
+<p><b>Mein macOS-Server spricht nur manche Zeilen.</b><br>Für macOS gibt es keine eigenständige Piper-Binary; der Server lädt mit deiner Zustimmung stattdessen die Sprach-Engine sherpa-onnx und spricht damit die Zeilen außerhalb des Stimmenpakets mit denselben Piper-Stimmen. Spricht nur das Paket, fehlt die Engine: die <code>[assets]</code>-Zeilen im Log sagen warum (keine Zustimmung, Download gescheitert oder <code>assets.autoDownload</code> aus), oder <code>voice.sherpaOnMac</code> steht auf <code>false</code> — eine Info-Zeile im Log sagt, welches (Einzelheiten: Discord #installation).</p>
+<p><b>Wie schalte ich die Live-Seite ein?</b><br>Die Mod liefert Live-Seite (Karte, Führer, Kettenfortschritt, Tode) und Anleitung selbst aus — ohne zusätzliches Programm. <code>"web": {"port": 8000}</code> in <code>config/creatorcivilizations/server.json</code> eintragen und neu starten (Standard <code>0</code> = aus). Spieler öffnen sie im Browser, der Port muss also von außen erreichbar sein (Firewall oder Panel des Hosters; viele Hoster vergeben einen zusätzlichen Port). Erreichen sie den Server unter einer anderen Adresse, <code>web.publicUrl</code> setzen (z. B. <code>"http://play.example.net:8000"</code>) — sonst nennen die Links die Adresse im lokalen Netz. <code>web.bind</code> (Standard <code>"0.0.0.0"</code> = alle Adressen) begrenzt, wo er lauscht. Nur lesend: GET und HEAD, nur Dateien im Ordner <code>client/</code> des Servers. Belegt schon ein anderer Webserver den Port, nutzt die Mod diesen weiter. Ganz aus: <code>-Dcreatorcivilizations.feature.liveWeb=false</code>.</p>
+<p><b>Die Chronik ist auf Deutsch.</b><br><code>chronicle.language</code> in <code>config/creatorcivilizations/server.json</code> auf <code>"en"</code> setzen (Standard <code>"de"</code>).</p>
+<p><b>Mein Server soll nichts herunterladen.</b><br>Ohne Zustimmung wird nichts geladen: <code>/creator assets decline</code> hält das fest und lässt sich später ändern. <code>assets.autoDownload: false</code> (oder <code>-Dcreatorcivilizations.assets.autoDownload=false</code>) sperrt Downloads unabhängig von der Wahl. Eigene Pfade in <code>voice.piper</code>, <code>voice.voicePack</code>, <code>voice.voices</code> haben immer Vorrang; ohne sie reden die Creator nur im Chat — ein Offline-Paket zum Hochladen von Hand gibt es derzeit nicht.</p>
+<div class="tip">Hängst du fest? Frag im <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#help) – Minecraft-Version, Mod-Version und
+<code>logs/latest.log</code> helfen sehr. Klingt etwas komisch, hängt ein Creator fest oder antwortet dumm? Merk dir kurz, was du
+gesagt hast und wann – das Server-Protokoll zeigt dann genau, was passiert ist.</div>
+
+<h2 id="reden">Mit Creatorn reden</h2>
+<h3>Im Chat (Taste T)</h3>
+<ul>
+  <li><b>Name</b> am Anfang oder Ende, Groß-/Kleinschreibung egal: <code>fernblick, wie geht's?</code> · <code>was hast du vor, Gartenfritz?</code> ·
+      auch <code>@giebelbauer</code>. Umlaute gehen auch ohne Umlaut-Taste: <code>feldhueter</code>.</li>
+  <li>Mitten im Satz zählt der Name nur, wenn der Creator höchstens 16 Blöcke weg ist.</li>
+  <li><b>Gespräch ohne Namen</b>: bis 60 Sekunden nach seiner letzten Antwort und in 16 Blöcken geht deine nächste Zeile an ihn –
+      aber nur, wenn sie ein Auftrag oder Gesprächsthema ist. Unterhaltungen unter Spielern bleiben so unbeantwortet.</li>
+  <li>Ohne Ansprache reagiert niemand auf Aufträge.</li>
+  <li>Sprichst du einen Creator mit Namen an, <b>antwortet er immer</b> – auch wenn er den Satz nicht versteht. Nur auf
+      einzelne Füllwörter wie <code>ok</code> oder <code>go</code> sagt er nichts.</li>
+</ul>
+<h3>Mit der Stimme</h3>
+<ul>
+  <li>Creator in höchstens 6 Blöcken <b>ansehen</b> und sprechen – ohne Namen. Wegschauen = niemand antwortet.</li>
+  <li>Oder aus bis zu 16 Blöcken den Namen sagen.</li>
+  <li>Was verstanden wurde, siehst nur du grau im Chat („🎤 …“). Erkannt wird in der Sprache, die dein Minecraft eingestellt hat.</li>
+  <li>Die erste Frage nach einer Pause dauert ein paar Sekunden länger (Spracherkennung lädt).</li>
+</ul>
+<h3>Ihre Stimmen</h3>
+<p>Jeder Creator hat eine eigene, <b>synthetische Stimme</b> – sie klingt nach Stimmung: erfreut über einen Diamanten, gereizt im Kampf,
+ängstlich mit wenig Leben. Viele Sätze liegen als fertiges Stimmen-Paket bereit und kommen sofort; neue Sätze erzeugt der Server.
+Ist die ausdrucksstarke Stimme gerade nicht schnell genug, spricht eine einfachere Ersatzstimme, damit keine Antwort ausbleibt.
+Die Stimmen sind niemandem nachgebildet. Sie sind <b>eingebaut</b> – du hörst sie mit der Mod allein, ohne Voice-Chat-Mod,
+räumlich am Creator: sie wandern mit ihm und werden mit dem Abstand leiser. Lautstärke: <b>Optionen → Musik &amp; Geräusche →
+Erzähler/Stimme &amp; Creator</b>.</p>
+<h3>Creator-Funk</h3>
+<p>Eine Voice-Chat-Gruppe, in der du <b>jeden Creator über jede Entfernung</b> erreichst: beitreten mit
+<code>/creator radio</code> oder im Voice-Chat-Menü (Taste <b>V</b> → Gruppen → „Creator-Funk“). Dort sprichst du einen Creator
+mit Namen an („Gartenfritz, wo bist du?“); danach geht deine nächste Zeile auch ohne Namen an ihn. Seine Antwort hört <b>die ganze
+Gruppe</b> in voller Lautstärke, mit Untertitel im Chat – die anderen Mitglieder hören dich ohnehin, wie in jeder Gruppe.
+Creator reden im Funk nur, wenn sie angesprochen werden; ihre Bemerkungen (Begrüßung, „wird dunkel“) hörst du nur in
+ihrer Nähe. Beitritt nur, wenn du willst – verlassen mit <code>/creator radio leave</code>.</p>
+<h3>Sprachen</h3>
+<p>Deutsche Creator verstehen Deutsch und Englisch und antworten in der Sprache deiner Nachricht.
+<b>Englische Creator verstehen nur Englisch</b> – sprich sie auf Englisch an. <b>Spanisch</b> verstehen alle Creator und
+antworten dann auf Spanisch.</p>
+<h3>Wie sie antworten</h3>
+<p>Fragen zu ihrem Zustand (wo, Gepäck, Plan, Befinden), Aufträge, Handel und die Bot-Frage beantworten sie aus ihrem
+echten Spielzustand. Freie Zeilen – Smalltalk, „gg“, Sticheleien, Fragen nach ihrer Meinung – erkennt eine eingebaute
+<b>Antwortbank</b> und beantwortet sie passend zur Persönlichkeit (auch Tippfehler, Kurzformen und „soooo“ werden
+verstanden); erkennt sie nichts, antworten sie nach der Satzform. Von sich aus sagen sie etwas, wenn du näher kommst, sie Diamanten finden, ein Freund stirbt, es Abend
+wird oder sie festhängen.</p>
+<p><b>Begrüßung</b>: einmal je Begegnung. Warst du fünf Minuten weg, heißt es „da bist du ja wieder“. Laufen dir viele
+Creator über den Weg, grüßen dich höchstens drei innerhalb von fünf Minuten.</p>
+<h3>Beziehungen</h3>
+<p>Jeder Creator hat zu dir eine Beziehung von −100 bis 100. Sie entsteht aus Handel, Geschenken, Lob, Beleidigungen,
+Angriffen, Diebstahl und Challenges und verblasst langsam (ein Punkt je Spieltag). Sie bestimmt, wie freundlich er redet,
+ob er mit dir handelt und ob er dir in Gefahr hilft.</p>
+<table><tr><th>Stufe</th><th>Wert</th><th>Was das heißt</th></tr>
+<tr><td>Bündnis</td><td>ab 61</td><td>Verbündete – wer dann angreift oder ein Haus abreißt, bricht den Vertrag (zusätzlich −40)</td></tr>
+<tr><td>Freundlich</td><td>21 bis 60</td><td>hilft dir, handelt gern</td></tr>
+<tr><td>Neutral</td><td>−20 bis 20</td><td>Anfang jeder Bekanntschaft</td></tr>
+<tr><td>Feindlich</td><td>−60 bis −21</td><td>grüßt kühl, handelt nicht mit dir</td></tr>
+<tr><td>Feindschaft</td><td>bis −61</td><td>offene Feindschaft</td></tr>
+</table>
+<p>Wechselt eure Stufe durch etwas, das passiert ist, <b>sagt er es dir</b>, sobald du in Hörweite bist („ab jetzt sind wir
+Verbündete“, „das vergess ich dir nicht“, „du hast unser Bündnis gebrochen“). Bündnisse und Vertragsbrüche stehen
+außerdem in der Chronik.</p>
+
+<h2 id="themen">Gesprächsthemen</h2>
+<p>Einige Beispiele je Thema (englisch und spanisch entsprechend). Tippfehler in unbekannten Wörtern werden verziehen.</p>
+<details><summary>Alle 50 Themen zeigen</summary>
+<table><tr><th>Du sagst zum Beispiel</th><th>Antwort</th></tr>
+<tr><td><code>wo ist die festung</code> · <code>wo ist eine festung</code> · <code>wo ist die netherfestung</code> · <code>wo liegt die festung</code> · <code>wo finde ich eine festung</code> · <code>wo ist die nächste festung</code></td><td>wo eine Netherfestung liegt, falls schon eine gesichtet wurde</td></tr>
+<tr><td><code>wo ist die endfestung</code> · <code>wo ist das endportal</code> · <code>wo liegt das endportal</code> · <code>wo finde ich das endportal</code></td><td>wo die Endfestung mit dem Endportal liegt, falls schon gefunden</td></tr>
+<tr><td><code>hallo</code> · <code>hi</code> · <code>hey</code> · <code>servus</code> · <code>moin</code> · <code>moin moin</code></td><td>Begrüßung — wen er schon kennt, begrüßt er anders; bei Feindschaft kühl</td></tr>
+<tr><td><code>wie geht's</code> · <code>wie gehts</code> · <code>wie geht es dir</code> · <code>wie geht's dir</code> · <code>wie gehts dir</code> · <code>alles gut</code></td><td>Befinden aus seinem echten Zustand (Leben, gerade gestorben, Ausrüstung)</td></tr>
+<tr><td><code>was gibt's neues</code> · <code>was gibts neues</code> · <code>neuigkeiten</code> · <code>was ist passiert</code> · <code>was ist los</code> · <code>was war los</code></td><td>das Neueste aus der Server-Chronik</td></tr>
+<tr><td><code>wer bist du</code> · <code>erzähl von dir</code> · <code>erzähl mal von dir</code> · <code>was machst du so</code> · <code>was für videos</code> · <code>dein kanal</code></td><td>wer er ist und was er am liebsten macht (ehrlich: eine erfundene KI-Figur)</td></tr>
+<tr><td><code>was hältst du von</code> · <code>was denkst du über</code> · <code>was denkst du von</code> · <code>wie findest du</code> · <code>magst du</code> · <code>kennst du</code></td><td>seine Meinung über einen anderen Creator oder Spieler — aus der echten Beziehung</td></tr>
+<tr><td><code>wo wohnst du</code> · <code>wo ist deine basis</code> · <code>wo ist dein haus</code> · <code>deine siedlung</code> · <code>wo lebst du</code> · <code>wo ist dein zuhause</code></td><td>wo seine Siedlung liegt (Entfernung und Himmelsrichtung)</td></tr>
+<tr><td><code>was hast du dabei</code> · <code>was hast du so dabei</code> · <code>dein inventar</code> · <code>zeig mal was du hast</code> · <code>was trägst du</code></td><td>die größten Stapel in seinem Gepäck</td></tr>
+<tr><td><code>danke</code> · <code>dankeschön</code> · <code>danke dir</code> · <code>vielen dank</code> · <code>merci</code> · <code>danke schön</code></td><td>Antwort auf Dank</td></tr>
+<tr><td><code>tschüss</code> · <code>tschau</code> · <code>bis später</code> · <code>bis dann</code> · <code>ciao</code> · <code>man sieht sich</code></td><td>Abschied</td></tr>
+<tr><td><code>gut gemacht</code> · <code>nice</code> · <code>cool</code> · <code>stark</code> · <code>krass</code> · <code>respekt</code></td><td>Lob — verbessert eure Beziehung (höchstens alle 5 Minuten)</td></tr>
+<tr><td><code>dein wolf</code> · <code>dein hund</code> · <code>hast du ein haustier</code> · <code>hast du einen wolf</code> · <code>hast du einen hund</code></td><td>sein Wolf, falls er einen hat</td></tr>
+<tr><td><code>wie weit seid ihr</code> · <code>wie weit bist du</code> · <code>wie läuft die expedition</code> · <code>stand der expedition</code> · <code>expedition</code> · <code>mit dem drachen</code></td><td>wie weit die Expeditionsführer auf dem Weg zum Enderdrachen sind</td></tr>
+<tr><td><code>wo gibt es</code> · <code>wo gibt's</code> · <code>wo finde ich</code> · <code>wo findet man</code> · <code>wo kriege ich</code> · <code>wo bekomme ich</code></td><td>wo es etwas gibt – aus dem, was die Creator gesehen oder abgebaut haben</td></tr>
+<tr><td><code>wo ist es gefährlich</code> · <code>was ist gefährlich</code> · <code>wovor muss ich aufpassen</code> · <code>wo muss ich aufpassen</code> · <code>gibt es gefahren</code> · <code>wo ist jemand gestorben</code></td><td>wo es gefährlich ist – Orte, an denen Creator gestorben sind, und woran</td></tr>
+<tr><td><code>was wisst ihr</code> · <code>was weißt du</code> · <code>was habt ihr herausgefunden</code> · <code>was habt ihr entdeckt</code> · <code>was gibt es neues zu wissen</code></td><td>was die Creator gemeinsam herausgefunden haben (Fundorte, Gefahren, was wo wächst)</td></tr>
+<tr><td><code>wer hat</code> · <code>hat jemand</code> · <code>habt ihr</code> · <code>hat einer</code> · <code>wer von euch hat</code></td><td>welcher Creator den Gegenstand gerade hat</td></tr>
+<tr><td><code>wo bist du</code> · <code>wo steckst du</code> · <code>wo bist du gerade</code> · <code>wo treibst du dich rum</code> · <code>wo bist</code></td><td>wo er gerade ist: Entfernung und Himmelsrichtung von dir aus, unter Tage mit Höhe</td></tr>
+<tr><td><code>warum</code> · <code>wieso</code> · <code>weshalb</code> · <code>was machst du da</code> · <code>was machst du gerade</code> · <code>was tust du da</code></td><td>warum er gerade tut, was er tut – mit dem Grund aus seiner Regel (z. B. warum er einen Umweg läuft)</td></tr>
+<tr><td><code>was hast du vor</code> · <code>was ist dein plan</code> · <code>was planst du</code> · <code>was machst du als nächstes</code> · <code>was hast du heute vor</code> · <code>was ist dein ziel</code></td><td>was er als Nächstes vorhat (nach seiner Ausrüstungsstufe)</td></tr>
+<tr><td><code>was braucht ihr</code> · <code>braucht ihr was</code> · <code>wie kann ich helfen</code> · <code>wie kann ich euch helfen</code> · <code>was fehlt euch</code> · <code>brauchst du was</code></td><td>was ihm fehlt (Hunger, Material)</td></tr>
+<tr><td><code>hast du hunger</code> · <code>bist du hungrig</code> · <code>hunger</code></td><td>ob er Hunger hat</td></tr>
+<tr><td><code>was haltet ihr von mir</code> · <code>was hältst du von mir</code> · <code>was haeltst du von mir</code> · <code>wie stehe ich bei euch</code> · <code>bin ich hier bürger</code> · <code>bin ich hier buerger</code></td><td>was die Siedlung von dir hält — deine Ruf-Stufe und der letzte Grund</td></tr>
+<tr><td><code>was kann ich mit dir machen</code> · <code>was können wir machen</code> · <code>was koennen wir machen</code> · <code>was kann ich hier machen</code> · <code>was geht hier</code> · <code>was kann ich mit euch machen</code></td><td>was du mit ihm gerade machen kannst — er nennt bis zu drei Dinge, die jetzt gehen, mit Knöpfen im Chat</td></tr>
+<tr><td><code>kannst du mir helfen</code> · <code>hilfe</code> · <code>hilf mir</code> · <code>ich brauche hilfe</code> · <code>was kannst du</code> · <code>was kann ich dir sagen</code></td><td>was du ihn fragen oder ihm sagen kannst</td></tr>
+<tr><td><code>ich will</code> · <code>ich brauche</code> · <code>ich hätte gern</code> · <code>kann ich haben</code> · <code>gib mir</code> · <code>hast du</code></td><td>ob er etwas hat — echter Bestand; Eisen und Diamanten braucht er selbst</td></tr>
+<tr><td><code>bist du ein bot</code> · <code>bist du echt</code> · <code>bist du eine ki</code> · <code>bist du ein mensch</code> · <code>bist du der echte</code> · <code>bist du real</code></td><td>ehrliche Antwort: eine fiktive KI-Figur, die es nur auf diesem Server gibt</td></tr>
+<tr><td><code>wie alt bist du</code> · <code>wie lange bist du schon hier</code> · <code>seit wann bist du hier</code></td><td>wie viele Tage er schon auf dem Server ist</td></tr>
+<tr><td><code>du nervst</code> · <code>du bist doof</code> · <code>du bist dumm</code> · <code>du bist blöd</code> · <code>halt die klappe</code> · <code>noob</code></td><td>Beleidigung — verschlechtert eure Beziehung (höchstens alle 5 Minuten)</td></tr>
+<tr><td><code>haha</code> · <code>hahaha</code> · <code>hehe</code> · <code>lol</code> · <code>xd</code> · <code>gg</code></td><td>lacht mit</td></tr>
+<tr><td><code>pass auf</code> · <code>vorsicht</code> · <code>achtung</code> · <code>hinter dir</code></td><td>Warnung — er prüft, ob wirklich ein Monster da ist</td></tr>
+<tr><td><code>creeper</code> · <code>zombie</code> · <code>zombies</code> · <code>skelett</code> · <code>skelette</code> · <code>spinne</code></td><td>was er von Monstern hält</td></tr>
+<tr><td><code>es wird dunkel</code> · <code>wird dunkel</code> · <code>es ist nacht</code> · <code>wetter</code> · <code>schönes wetter</code> · <code>regnet</code></td><td>Tageszeit und Wetter</td></tr>
+<tr><td><code>lieblingsblock</code> · <code>lieblingsitem</code> · <code>lieblingsspiel</code> · <code>lieblingsessen</code> · <code>was magst du am liebsten</code> · <code>was magst du lieber</code></td><td>Lieblingssachen</td></tr>
+<tr><td><code>grüß mich</code> · <code>grüss mich</code> · <code>grüße mich</code> · <code>kannst du mich grüßen</code> · <code>kannst du mich grüssen</code> · <code>sag hallo zu mir</code></td><td>grüßt dich — oder jemand anderen beim Namen</td></tr>
+<tr><td><code>wie heißt du</code> · <code>wie heisst du</code> · <code>wie ist dein name</code> · <code>dein name</code></td><td>sein Name</td></tr>
+<tr><td><code>1v1</code> · <code>willst du 1v1</code> · <code>kannst du pvp</code> · <code>pvp</code> · <code>kampf gegen mich</code> · <code>kämpf gegen mich</code></td><td>Duell fordern (bis zum Tod, danach „ja“; als Operator auch „Kit-Duell?“)</td></tr>
+<tr><td><code>kann ich dich was fragen</code> · <code>darf ich dich was fragen</code> · <code>ich hab eine frage</code> · <code>ich habe eine frage</code> · <code>frage</code></td><td>„Frag ruhig“</td></tr>
+<tr><td><code>wie kontere ich das</code> · <code>wie kontere ich dich</code> · <code>was hilft dagegen</code> · <code>wie wehre ich mich dagegen</code> · <code>wie schlage ich dich</code> · <code>wie besiege ich dich</code></td><td>wie du seinen letzten Kampftrick kontern kannst</td></tr>
+<tr><td><code>wie steht das rennen</code> · <code>wie steht das wettrennen</code> · <code>wer liegt vorne</code> · <code>wer liegt vorn</code> · <code>wer ist vorne</code> · <code>wettrennen</code></td><td>wer im Wettrennen um die ersten Fortschritte der Welt vorne liegt</td></tr>
+<tr><td><code>was habt ihr gebaut</code> · <code>was hast du gebaut</code> · <code>zeig mir euer dorf</code> · <code>zeig mir dein dorf</code> · <code>welche gebäude habt ihr</code> · <code>was baut ihr</code></td><td>was seine Siedlung schon gebaut hat und was er gerade baut</td></tr>
+<tr><td><code>was macht deine hühnerfarm</code> · <code>wie läuft deine hühnerfarm</code> · <code>läuft deine hühnerfarm</code> · <code>was macht dein hühnerbräter</code> · <code>wie läuft dein hühnerbräter</code> · <code>läuft dein hühnerbräter</code></td><td>wie seine Maschine läuft, z. B. der Hühnerbräter (Hühner drin, Ertrag in der Truhe)</td></tr>
+<tr><td><code>wie hast du das gemacht</code> · <code>wie machst du das</code> · <code>welche technik</code> · <code>was für eine technik</code> · <code>was war das für ein trick</code> · <code>was war das</code></td><td>welchen Kampftrick er gerade benutzt hat und wie er funktioniert</td></tr>
+<tr><td><code>wer führt</code> · <code>wer fuehrt</code> · <code>wer ist am weitesten</code> · <code>weg zum drachen</code></td><td>wer auf dem Weg zum Drachen am weitesten ist — Stufe und Fortschritt (mit Drachenrennen-Tafel)</td></tr>
+<tr><td><code>wie steht das turnier</code> · <code>wer gewinnt das turnier</code> · <code>läuft ein turnier</code> · <code>laeuft ein turnier</code> · <code>wer kämpft gerade</code> · <code>wer kaempft gerade</code></td><td>wie das Turnier steht — wer gerade kämpft oder noch dabei ist</td></tr>
+<tr><td><code>jag mich</code> · <code>jagd mich</code> · <code>fang mich doch</code> · <code>manhunt</code> · <code>wie lang noch bis zur ortung</code> · <code>wann ortet ihr mich</code></td><td>„Jag mich!“ startet eine Manhunt mit ihm als Jäger (mit Zustimmungsfrage); läuft eine, nennt er die Zeit bis zur nächsten Ortung</td></tr>
+<tr><td><code>feiert ihr</code> · <code>gibt es ein fest</code> · <code>darf ich mitfeiern</code> · <code>wann ist das fest</code></td><td>ob seine Siedlung feiert oder bald feiert</td></tr>
+<tr><td><code>hör auf mit den witzen</code> · <code>hoer auf mit den witzen</code> · <code>keine witze mehr</code> · <code>lass die witze</code></td><td>„Hör auf mit den Witzen“ — die Creator machen keine Running Gags mehr über dich (Antworten bleiben)</td></tr>
+<tr><td><code>ihr dürft wieder witze machen</code> · <code>ihr duerft wieder witze machen</code> · <code>macht wieder witze</code></td><td>„Ihr dürft wieder Witze machen“ — die Running Gags sind wieder an</td></tr>
+</table>
+</details>
+
+<h2 id="befehle">Aufträge an Creator</h2>
+<p>Aufträge nimmt ein Creator von seinem <b>Besitzer</b> (<code>/creator owner</code>) oder einem Operator an. Kleine
+Gefallen – sammeln, bringen, herkommen, angeln, Feld, braten, einlagern – tut er auch dir, wenn er gerade nichts Eigenes vorhat,
+keinen Expeditionsauftrag hat und dir nicht feindlich gesinnt ist; bauen nur für Freunde. Sonst heißt es „das entscheidet mein
+Teamchef“. Handel, Status und Beitritt gehen mit allen.</p>
+<table><tr><th>Du sagst (deutsch · <span class=en>englisch</span>)</th><th>Er macht</th><th>Wer</th></tr>
+<tr><td><code>folg mir</code> · <code>folge mir</code> · <code>folgt mir</code> · <code>komm mit</code> · <code>komm mit mir</code> · <code>hinterher</code> · <code>lauf mir nach</code> · <code>geh mit mir</code><br><span class=en><code>follow me</code> · <code>follow</code> · <code>come with me</code> · <code>come along</code> · <code>tag along</code> · <code>walk with me</code></span></td><td>folgt dir (höchstens 32 Blöcke Abstand, läuft hinterher, teleportiert nie)</td><td>Besitzer</td></tr>
+<tr><td><code>bleib</code> · <code>bleib hier</code> · <code>bleib stehen</code> · <code>warte</code> · <code>warte hier</code> · <code>stopp</code> · <code>stop</code> · <code>halt an</code><br><span class=en><code>stay</code> · <code>stay here</code> · <code>wait</code> · <code>wait here</code> · <code>stop</code> · <code>hold on</code></span></td><td>bleibt stehen, bis du ihm etwas anderes sagst</td><td>Besitzer</td></tr>
+<tr><td><code>komm her</code> · <code>komm hierher</code> · <code>komm zu mir</code> · <code>hierher</code> · <code>komm mal her</code> · <code>komm rüber</code><br><span class=en><code>come here</code> · <code>come to me</code> · <code>over here</code> · <code>get over here</code> · <code>come over</code></span></td><td>kommt zu dir gelaufen</td><td>Besitzer · sonst als Gefallen</td></tr>
+<tr><td><code>sammel</code> · <code>sammle</code> · <code>sammeln</code> · <code>hol</code> · <code>hole</code> · <code>holen</code> · <code>besorg</code> · <code>besorge</code><br><span class=en><code>gather</code> · <code>collect</code> · <code>get some</code> · <code>fetch</code> · <code>mine</code> · <code>chop</code></span></td><td>sammelt das genannte Material, z. B. „hol holz“ oder „hol 20 stein“</td><td>Besitzer · sonst als Gefallen</td></tr>
+<tr><td><code>bau</code> · <code>baue</code> · <code>bauen</code> · <code>errichte</code> · <code>bau mir</code> · <code>bau uns</code><br><span class=en><code>build</code> · <code>build me</code> · <code>build us</code> · <code>make a</code> · <code>construct</code> · <code>put up</code></span></td><td>baut, was du nennst – Haus, Auto-Schmelze, Brunnen, Bibliothek, Tiergehege … (Liste: „Was kannst du bauen?“) –, das Material holt er selbst</td><td>Besitzer · Freunde als Gefallen</td></tr>
+<tr><td><code>verteidige mich</code> · <code>beschütz mich</code> · <code>beschütze mich</code> · <code>pass auf mich auf</code> · <code>verteidige</code> · <code>beschütze</code><br><span class=en><code>defend me</code> · <code>protect me</code> · <code>defend</code> · <code>protect</code> · <code>cover me</code> · <code>watch my back</code></span></td><td>beschützt dich und greift an, was dich angreift</td><td>Besitzer</td></tr>
+<tr><td><code>bewach</code> · <code>bewache</code> · <code>halte die stellung</code> · <code>halt die stellung</code> · <code>wache halten</code> · <code>halte wache</code> · <code>bewach das</code><br><span class=en><code>guard</code> · <code>guard this</code> · <code>hold the line</code> · <code>hold position</code> · <code>keep watch</code> · <code>stand guard</code></span></td><td>bewacht die Stelle, an der er steht</td><td>Besitzer</td></tr>
+<tr><td><code>geh heim</code> · <code>geh nach hause</code> · <code>nach hause</code> · <code>ab nach hause</code> · <code>zurück nach hause</code> · <code>geh zurück</code> · <code>heim</code><br><span class=en><code>go home</code> · <code>head home</code> · <code>return home</code> · <code>back home</code> · <code>go back home</code> · <code>home</code></span></td><td>geht zu seiner Siedlung zurück</td><td>Besitzer</td></tr>
+<tr><td><code>mach was du willst</code> · <code>du bist frei</code> · <code>mach dein ding</code> · <code>mach weiter</code> · <code>weitermachen</code> · <code>du kannst gehen</code> · <code>frei</code><br><span class=en><code>do your thing</code> · <code>you're free</code> · <code>youre free</code> · <code>do whatever</code> · <code>carry on</code> · <code>keep going</code></span></td><td>wieder selbstständig — macht sein eigenes Ding</td><td>Besitzer</td></tr>
+<tr><td><code>handeln</code> · <code>handel</code> · <code>tauschen</code> · <code>tausch</code> · <code>willst du tauschen</code> · <code>verkauf</code> · <code>kaufen</code><br><span class=en><code>trade</code> · <code>wanna trade</code> · <code>want to trade</code> · <code>sell</code> · <code>buy</code></span></td><td>macht dir ein Tauschangebot; du wirfst ihm die Bezahlung zu (Taste Q), die Ware kommt zurück. „handel holz“ fragt nach etwas Bestimmtem. Mit Feinden handelt er nicht</td><td>alle</td></tr>
+<tr><td><code>was machst du</code> · <code>was tust du</code> · <code>status</code> · <code>was geht</code><br><span class=en><code>what are you doing</code> · <code>whatcha doing</code> · <code>status</code> · <code>what's up</code> · <code>whats up</code></span></td><td>sagt, was er gerade macht</td><td>alle</td></tr>
+<tr><td><code>kann ich beitreten</code> · <code>darf ich beitreten</code> · <code>kann ich mitmachen</code> · <code>darf ich mitmachen</code> · <code>nimm mich auf</code> · <code>nehmt ihr mich auf</code> · <code>ich will beitreten</code> · <code>ich will mitmachen</code><br><span class=en><code>can i join</code> · <code>may i join</code> · <code>let me join</code> · <code>i want to join</code> · <code>take me in</code> · <code>can i join your group</code></span></td><td>du willst in seine Gruppe/seinen Clan — er stellt dir eine Challenge (siehe unten)</td><td>alle</td></tr>
+<tr><td><code>greif</code> · <code>greife</code> · <code>greift</code> · <code>angreifen</code> · <code>attackier</code> · <code>attackiere</code> · <code>töte</code> · <code>erledige</code><br><span class=en><code>attack</code> · <code>kill</code> · <code>go after</code> · <code>take down</code></span></td><td>greift den genannten Creator an – aber nur, wenn der sein Feind ist (verfeindet oder im Krieg mit seiner Siedlung). Einen Spieler nur, wenn der gerade angreift. Sonst sagt er ehrlich, warum nicht („Fernblick hat mir nichts getan“, „das ist mein Freund“)</td><td>Besitzer</td></tr>
+<tr><td><code>bring mir</code> · <code>bringe mir</code> · <code>bring uns</code> · <code>hol mir</code> · <code>hole mir</code> · <code>holst du mir</code> · <code>bringst du mir</code> · <code>kannst du mir bringen</code><br><span class=en><code>bring me</code> · <code>bring us</code> · <code>get me</code> · <code>fetch me</code> · <code>grab me</code> · <code>can you bring me</code></span></td><td>bringt dir, was du nennst – aus seinem Gepäck, aus dem Lager der Siedlung oder er sammelt es, z. B. „bring mir 10 brot“</td><td>Besitzer · sonst als Gefallen</td></tr>
+<tr><td><code>geh angeln</code> · <code>geht angeln</code> · <code>angel was</code> · <code>angel mal</code> · <code>angle was</code> · <code>fang fische</code> · <code>fang fisch</code> · <code>fisch mal was</code><br><span class=en><code>go fishing</code> · <code>catch some fish</code> · <code>catch fish</code> · <code>go fish</code> · <code>fish for us</code> · <code>do some fishing</code></span></td><td>geht angeln und bringt den Fang mit</td><td>Besitzer · sonst als Gefallen</td></tr>
+<tr><td><code>bestell das feld</code> · <code>bestellt das feld</code> · <code>bestelle das feld</code> · <code>ernte das feld</code> · <code>kümmer dich ums feld</code> · <code>kümmere dich ums feld</code> · <code>geh aufs feld</code> · <code>mach feldarbeit</code><br><span class=en><code>tend the field</code> · <code>work the field</code> · <code>harvest the field</code> · <code>farm the field</code> · <code>do some farming</code> · <code>tend the farm</code></span></td><td>bestellt und erntet sein Feld</td><td>Besitzer · sonst als Gefallen</td></tr>
+<tr><td><code>brat das fleisch</code> · <code>brate das fleisch</code> · <code>brat fleisch</code> · <code>brate fleisch</code> · <code>koch was</code> · <code>koche was</code> · <code>koch das essen</code> · <code>brat das essen</code><br><span class=en><code>cook the meat</code> · <code>cook some meat</code> · <code>cook some food</code> · <code>cook something</code> · <code>cook the food</code></span></td><td>brät rohes Fleisch im Ofen</td><td>Besitzer · sonst als Gefallen</td></tr>
+<tr><td><code>bring alles ins lager</code> · <code>räum dein gepäck auf</code> · <code>räum dein inventar auf</code> · <code>lager alles ein</code> · <code>leer dein inventar</code> · <code>pack alles in die truhe</code><br><span class=en><code>store your stuff</code> · <code>put your stuff in the chest</code> · <code>empty your inventory</code> · <code>stash your stuff</code> · <code>store everything</code></span></td><td>bringt sein Gepäck ins Lager der Siedlung</td><td>Besitzer · sonst als Gefallen</td></tr>
+<tr><td><code>lass das</code> · <code>lass es</code> · <code>hör auf</code> · <code>hör auf damit</code> · <code>vergiss es</code> · <code>brich ab</code> · <code>brich das ab</code> · <code>doch nicht</code><br><span class=en><code>never mind</code> · <code>nevermind</code> · <code>cancel that</code> · <code>forget it</code> · <code>stop that</code> · <code>don't bother</code></span></td><td>bricht ab, was du ihm gerade aufgetragen hast</td><td>Besitzer</td></tr>
+</table>
+<p><b>Sammelbare Materialien</b>: <code>baumstämme</code> · <code>bruchstein</code> · <code>bäume</code> · <code>cobble</code> · <code>dreck</code> · <code>erde</code> · <code>holz</code> · <code>kies</code> · <code>sand</code> · <code>stein</code> · <code>steine</code> · <code>stämme</code><br><span class=en><code>cobble</code> · <code>cobblestone</code> · <code>dirt</code> · <code>gravel</code> · <code>log</code> · <code>logs</code> · <code>sand</code> · <code>stone</code> · <code>trees</code> · <code>wood</code></span></p>
+<p><b>Bauwerke</b>: frag einen Creator <code>Was kannst du bauen?</code> – er nennt, was er kann (Brunnen, Tiergehege,
+Bibliothek, Schmieden, Laternen, Dorfplätze …). Bestellen wie <code>bau einen Brunnen</code>: er nimmt eine Vorlage aus den
+Dörfern des Spiels im Stil seines Zuhauses (Ebene, Wüste, Savanne, Taiga, Schnee) und holt das Material selbst – Holz fällen,
+Bretter und Treppen herstellen, Sand graben und zu Glas schmelzen. Die ganze Liste mit Stilen: <code>/creator buildings</code>.</p>
+<p><b>Eigene Bauwerke</b>: lege <code>.nbt</code>-Dateien (Strukturblock) oder <code>.schem</code>-Dateien (WorldEdit) in den
+Ordner <code>config/creatorcivilizations/bauwerke</code> des Servers (höchstens 32 Blöcke je Kante), dann <code>/reload</code>.
+Bestellt wird mit dem Dateinamen: für <code>leuchtturm.nbt</code> „Giebelbauer, bau mir einen Leuchtturm“. Das Material muss der
+Creator nicht dabeihaben – er besorgt es wie bei den Spiel-Bauwerken.</p>
+<p><b>Eigene Namen</b>: in <code>config/creatorcivilizations/names.json</code> des Servers stehen alle Creator mit Kennung und Namen.
+Namen ändern, Server neu starten – Namensschild, Chat und Stimme folgen, Spielstände bleiben. Namen müssen eindeutig sein; echte
+Personen bitte nur mit deren Einverständnis.</p>
+
+<h2 id="challenges">Challenges</h2>
+<p>Frag einen Creator <code>kann ich beitreten?</code> – er stellt dir eine Prüfung (Tabelle unten). Annehmen mit
+<code>/creator challenge accept &lt;id&gt;</code>, ablehnen ohne Nachteil. Bestanden: Beziehung +30 und Einladung in seinen
+Clan. Nicht bestanden: −5, neuer Versuch nach einem halben Spieltag. Challenge-Monster lassen nichts fallen.</p>
+
+<h2 id="kommandos">Alle Befehle</h2>
+<p>Alles unter <code>/creator</code>; die Befehle selbst sind englisch (z. B. <code>/creator shield never</code>). Tab-Vervollständigung schlägt Creator-Namen vor.
+In allen Befehlen mit Spieler oder Creator (<code>/tp</code>, <code>/kill</code>, <code>/effect</code>, <code>/gamemode</code>, <code>/give</code>,
+<code>/kit</code> …) reicht der <b>Name</b> (auch ohne Umlaute, „feldhueter“) oder ein <b>eindeutiger Anfang</b> („fern“); passt der Anfang
+auf mehrere, kommt die normale Fehlermeldung.</p>
+<details><summary>Alle 75 Befehle zeigen</summary>
+<table><tr><th>Befehl</th><th>Wer darf</th><th>Wofür</th></tr>
+<tr class=grp><th colspan=3>Start</th></tr>
+<tr><td><code>go · los · start (im Chat)</code></td><td>Operator oder start.ownerUuids</td><td>Creator im Startkreis loslaufen lassen</td></tr>
+<tr><td><code>/creator start</code></td><td>Operator oder start.ownerUuids</td><td>dasselbe als Befehl</td></tr>
+<tr><td><code>/creator start status</code></td><td>alle</td><td>Phase, Welle, Mitte des Startkreises</td></tr>
+<tr><td><code>/creator start setup</code></td><td>Operator</td><td>nächste Welle in den Startkreis stellen</td></tr>
+<tr><td><code>/creator start reset</code></td><td>Operator</td><td>alles neu: Creator, Siedlungen, Beziehungen, Chronik; neuer Startkreis dort, wo du stehst</td></tr>
+<tr class=grp><th colspan=3>Überblick</th></tr>
+<tr><td><code>/creator list</code></td><td>alle</td><td>alle Creator mit Sprache, wie viele in der Welt sind</td></tr>
+<tr><td><code>/creator info &lt;creator&gt;</code></td><td>alle</td><td>Sprache, Kategorien, Rollen, Skills; in der Welt: Position, Leben, Hunger, Aufgabe, ob er schläft, feststeckt oder schussbereit ist</td></tr>
+<tr><td><code>/creator situation</code></td><td>alle</td><td>die Lage in wenigen Zeilen (in der Sprache deines Spiels): Weg zum Enderdrachen, Expeditionsführer mit Gepäck, Siedlungen und was ihnen fehlt, letzte Nacht, Tode</td></tr>
+<tr><td><code>/creator news [count]</code></td><td>alle</td><td>Server-Chronik (Standard 10, höchstens 50 Einträge)</td></tr>
+<tr><td><code>/creator buildings</code></td><td>alle</td><td>welche Bauwerke Creator bauen können (Arten mit Stilen, eigene Baupläne) und wie man sie bestellt</td></tr>
+<tr><td><code>/creator status</code></td><td>Operator</td><td>Betrieb: Spieltag, Spieler, Creator, wer feststeckt, letztes Welt-Backup, Autosave</td></tr>
+<tr><td><code>/creator assets &lt;accept|decline|status&gt;</code></td><td>Operator</td><td>Stimmen-Downloads (Stimmenpaket, Sprach-Engine, Stimmenmodelle) annehmen oder ablehnen, Wahl und Inhalt ansehen; gespeichert, auch an der Konsole und für den Besitzer der Einzelspielerwelt ohne Cheats</td></tr>
+<tr><td><code>/creator cleanup &lt;radius&gt; [apply]</code></td><td>Operator</td><td>liegengebliebene Gerüstblöcke der Creator (Treppen, Säulen, Brücken in der Luft) im Umkreis zählen; mit apply abräumen — Häuser, Felder und Truhen bleiben</td></tr>
+<tr><td><code>/creator quests</code></td><td>alle</td><td>deine offenen Bitten der Siedlungen mit Fortschritt (geliefert / gewünscht)</td></tr>
+<tr><td><code>/creator quest accept|decline &lt;siedlung&gt; &lt;art&gt;</code></td><td>alle</td><td>eine Bitte annehmen oder ablehnen — das machen die Knöpfe der Meldung; Ablehnen hat nie Folgen</td></tr>
+<tr><td><code>/creator standing [siedlung]</code></td><td>alle</td><td>dein Ruf bei den Siedlungen: Stufe (Fremder, Gast, Bürger, Ratgeber), Wert, was zur nächsten Stufe fehlt und die letzten Gründe</td></tr>
+<tr><td><code>/creator rematch &lt;creator&gt; | rematch decline &lt;creator&gt;</code></td><td>alle</td><td>Revanche annehmen oder ablehnen — das machen die Knöpfe, wenn dir ein Gegner eine anbietet; Ablehnen hat nie Folgen</td></tr>
+<tr><td><code>/creator alerts all|important|off</code></td><td>alle</td><td>Spannungs-Alarme: wichtig (Standard) = ein Creator in Lebensgefahr in Nether, End oder Stronghold und Drachenkampf; alle; aus</td></tr>
+<tr><td><code>/creator contest start <Thema></code></td><td>alle</td><td>Bauwettbewerb: jede Siedlung mit einem freien Erbauer baut zum Thema (lamp, small_house, animal_pen, temple) den kleinsten passenden Dorf-Bauplan ihres Bioms — ehrlich gesagt ein Wettbewerb der Auswahl und Ausführung, keine freie Gestaltung. Material beschaffen sie selbst; eine hungernde Siedlung baut erst, wenn wieder Essen da ist. Frist zwei Spieltage, danach bist du die Jury. Das Bauwerk bleibt als normales Gebäude stehen</td></tr>
+<tr><td><code>/creator contest vote <Siedlung> <1–10></code></td><td>alle</td><td>Note für das Bauwerk einer Siedlung (Name oder Kennung aus der Meldung); die eigene Siedlung (Ruf ab Bürger) darfst du nicht bewerten. Höchster Mittelwert gewinnt: Chronik-Eintrag, Ruf +8 bei jedem, der abgestimmt hat, und ein Fest. Der Erbauer kommentiert deine Note</td></tr>
+<tr><td><code>/creator bannergame start <SiedlungA> <SiedlungB> [a|b|neutral]</code></td><td>alle</td><td>Fahnenraub: zwei Siedlungen, die sich nicht feind sind, stellen je ein eigenes Banner an ihrer Mitte auf — fehlt eins, stellt ein Mitglied es aus 6 Wolle einer Farbe (Gepäck oder Lager) und einem Stock her; ohne beides kein Spiel. Jedes heimgebrachte fremde Banner ist ein Punkt, danach kehrt es auf seinen Pfosten zurück; wer zuerst 3 Punkte hat, gewinnt, nach einem Spieltag wer mehr hat. Niemand stirbt: wer unter vier Herzen fällt, ist draußen und läuft zur eigenen Mitte, ein getragenes Banner kehrt zurück. Nichts wird abgebaut außer den Bannern, danach haben beide ihr Banner wieder; die Siedlungen verstehen sich besser. Mit a/b spielst du auf einer Seite mit (nicht bei /creator war never), neutral wirst du nie angegriffen</td></tr>
+<tr><td><code>/creator follow <Creator> | stop</code></td><td>alle</td><td>Fernsicht (Probephase, auf diesem Server erst nach Freischaltung): du siehst den Creator live, auch weit weg — dein Körper bleibt stehen und ist ungeschützt. Nur im Überlebens-/Abenteuermodus, auf festem Boden, ohne Monster in der Nähe; Schaden oder ein nahes Monster beenden die Ansicht sofort, Esc ebenso. Braucht die aktuelle Mod im Client</td></tr>
+<tr><td><code>/creator teach start <Name> | done | cancel</code></td><td>alle</td><td>Bauweise zeigen: stell dich zu einem Creator, der dich sieht, starte die Aufnahme und bau etwas (höchstens 16 Blöcke je Kante). Mit done wird daraus ein Bauplan — nur deine eigenen, noch stehenden Blöcke. Jeder Creator kann ihn danach bauen, mit eigenem Material: „bau mir <Name>“. Höchstens zehn Baupläne je Spieler</td></tr>
+<tr><td><code>/creator listen <Creator> | stop</code></td><td>alle</td><td>Mithören (Probephase, mit der Fernsicht freigeschaltet): du hörst den Creator und siehst oben Ort, Leben und was er gerade denkt — ohne Bild, auch wenn er im Nether oder End ist. Du spielst dabei normal weiter. Geht ein angesehener Creator durchs Portal, bietet die Meldung [mithören] an</td></tr>
+<tr><td><code>/creator menu</code></td><td>alle</td><td>Creator-Menü (mit Mod im Client): Jetzt (was gerade geht), Siedlungen (dein Ruf), Fehden (Revanche), Spielmodi (Turnier, Manhunt), Zuschauen (wer was tut) und Einstellungen. Was gerade nicht geht, steht grau mit Grund da. Eine Taste dafür legst du unter Steuerung → Creator Civilizations fest; jeder Knopf tut dasselbe wie der passende /creator-Befehl</td></tr>
+<tr><td><code>/creator gags on|off</code></td><td>alle</td><td>Running Gags: off = die Creator machen keine Witze mehr über dich (Essen, Schlaf, Lieblingswaffe …); on = wieder an. Dasselbe wie „Hör auf mit den Witzen“ im Chat</td></tr>
+<tr><td><code>/creator board on|off</code></td><td>alle</td><td>Drachenrennen-Tafel: in der Seitenleiste die fünf Expeditionsführer, die auf dem Weg zum Drachen am weitesten sind (Stufe L1 Nether … L13); erreicht einer eine neue Stufe, zeigt eine Leiste oben 10 Sekunden lang, wer und was. off blendet sie für dich aus</td></tr>
+<tr><td><code>/creator tournament start <Namen…></code></td><td>alle</td><td>Turnier: 2–8 Creator in deiner Nähe treten im K.-o.-System gegeneinander an, mit eigener Ausrüstung. Jeder Kampf endet, bevor einer unter 2 Herzen fällt — niemand stirbt, niemand verliert etwas. Angeschlagene und Expeditionsführer mitten im Auftrag sagen ab. Der Sieger kommt in die Chronik. Mit „ich“ in der Namensliste kämpfst du selbst mit (Überlebensmodus) — auch für dich endet jeder Kampf vor 2 Herzen</td></tr>
+<tr><td><code>/creator tournament bet <Kämpfer></code></td><td>alle</td><td>auf einen Turnier-Teilnehmer wetten, solange der erste Kampf noch nicht läuft: danach wirfst du dem Buchmacher (ein Creator am Platz, der nicht kämpft) Smaragde zu — das ist dein Einsatz. Höchstens 16 Smaragde je Turnier. Gewinnt dein Kämpfer, zahlt er Einsatz × Quote aus seinem eigenen Bestand; reicht der nicht, anteilig. Bei Abbruch kommt der Einsatz zurück. Statt des Befehls geht auch „5 auf Hofmann“ im Chat oder per Stimme, wenn du am Turnier stehst. Wetten sind standardmäßig aus; der Betreiber schaltet sie mit features.tournamentBets=true in server.json ein</td></tr>
+<tr><td><code>/creator manhunt start <Jäger…> [fresh] [short]</code></td><td>alle</td><td>Manhunt: 1–3 Creator in deiner Nähe jagen dich; du willst ins End (short: eine Festung finden, nach dem ersten Drachensieg der Creator: den Drachen besiegen). 60 s Vorsprung, alle 5 min erfahren die Jäger deine Position (du bekommst eine Meldung); fresh = alle starten mit leerem Inventar, deins wird verwahrt und kommt garantiert zurück. Du stimmst erst zu, wenn du das Risiko gelesen hast</td></tr>
+<tr><td><code>/creator manhunt accept|decline <id> · /creator manhunt stop</code></td><td>alle</td><td>der Zustimmungsfrage zustimmen oder sie ablehnen (die Knöpfe tun dasselbe); stop bricht eine laufende Jagd ohne Wertung ab</td></tr>
+<tr><td><code>/creator newbie</code></td><td>alle</td><td>noch einmal wie ein Neuling entdecken: die Creator bieten dir alles wieder an, als hättest du es nie benutzt (Ruf, Fehden und Bitten bleiben)</td></tr>
+<tr><td><code>/creator quiet [on|off]</code></td><td>alle</td><td>Ruhe: die Creator bieten dir nichts mehr von sich aus an; Antworten auf deine Fragen bleiben</td></tr>
+<tr><td><code>/live</code></td><td>alle</td><td>anklickbarer Link zur Live-Seite (was die Creator gerade machen, Karte, Siedlungen). Ist sie auf dem Server nicht eingeschaltet, sagt der Befehl, wie ein Admin das tut</td></tr>
+<tr><td><code>/guide</code></td><td>alle</td><td>anklickbarer Link zu dieser Anleitung in der Sprache deines Spiels (dazu der Link zur anderen Sprache)</td></tr>
+<tr class=grp><th colspan=3>Voice Chat</th></tr>
+<tr><td><code>/creator radio</code></td><td>alle mit Voice Chat</td><td>dem Creator-Funk beitreten: Creator über jede Entfernung ansprechen, Antworten hört die Gruppe</td></tr>
+<tr><td><code>/creator radio leave</code></td><td>alle</td><td>Creator-Funk verlassen</td></tr>
+<tr class=grp><th colspan=3>Creator steuern</th></tr>
+<tr><td><code>/creator owner &lt;creator&gt; &lt;player&gt;</code></td><td>Operator</td><td>Besitzer festlegen — nur Besitzer und Operatoren geben Befehle</td></tr>
+<tr><td><code>/creator select &lt;creator&gt;</code></td><td>alle</td><td>Creator auswählen (gilt bis zum Server-Neustart)</td></tr>
+<tr><td><code>/creator command &lt;mode&gt; [creator]</code></td><td>Besitzer / Operator</td><td>Modus setzen: follow · stay · guard_position · defend · return_home · autonomous (ohne Creator: der ausgewählte)</td></tr>
+<tr><td><code>/creator spawn &lt;creator&gt;</code></td><td>Operator</td><td>einen Creator erscheinen lassen</td></tr>
+<tr class=grp><th colspan=3>Gruppen &amp; Siedlungen</th></tr>
+<tr><td><code>/creator group list</code></td><td>alle</td><td>Gruppenvorschläge der Creator, klickbar [annehmen] / [ablehnen], Punkte per Mauszeiger</td></tr>
+<tr><td><code>/creator group accept &lt;id&gt;</code></td><td>Operator oder start.ownerUuids</td><td>Vorschlag annehmen — die Gruppe gründet eine Siedlung</td></tr>
+<tr><td><code>/creator group reject &lt;id&gt;</code></td><td>alle</td><td>Vorschlag für dich ausblenden</td></tr>
+<tr><td><code>/creator civ list</code></td><td>alle</td><td>alle Siedlungen mit Stufe und Mitgliedern</td></tr>
+<tr><td><code>/creator civ info &lt;id&gt;</code></td><td>alle</td><td>Anführer, Stufe und was zur nächsten Stufe fehlt</td></tr>
+<tr class=grp><th colspan=3>Challenges &amp; Clans</th></tr>
+<tr><td><code>/creator challenge list</code></td><td>alle</td><td>deine Challenges und ihr Zustand</td></tr>
+<tr><td><code>/creator challenge accept &lt;id&gt;</code></td><td>eingeladener Spieler</td><td>Challenge annehmen</td></tr>
+<tr><td><code>/creator challenge decline &lt;id&gt;</code></td><td>eingeladener Spieler</td><td>ablehnen (ohne Nachteil)</td></tr>
+<tr><td><code>/creator clan info</code></td><td>alle</td><td>dein Clan und offene Einladungen</td></tr>
+<tr><td><code>/creator clan accept &lt;clanId&gt;</code></td><td>eingeladener Spieler</td><td>Clan beitreten</td></tr>
+<tr><td><code>/creator clan decline &lt;clanId&gt;</code></td><td>eingeladener Spieler</td><td>Einladung ablehnen</td></tr>
+<tr class=grp><th colspan=3>Kampf</th></tr>
+<tr><td><code>/creator shield</code></td><td>alle</td><td>zeigt, wie oft Creator gegen dich den Schild heben</td></tr>
+<tr><td><code>/creator shield &lt;always|often|sometimes|rarely|never&gt;</code></td><td>alle (für sich selbst)</td><td>Schwierigkeit im Kampf: Schild der Creator gegen dich 100 / 70 / 40 / 15 / 0 % — nur gegen dich, gilt dauerhaft</td></tr>
+<tr class=grp><th colspan=3>Krieg</th></tr>
+<tr><td><code>/creator war</code></td><td>alle</td><td>deine Einstellung, offene Kriegserklärungen an dich und Kriege gegen dich</td></tr>
+<tr><td><code>/creator war never</code></td><td>alle (für sich selbst)</td><td>nie Kriegserklärungen an dich — offene werden zurückgezogen; gilt dauerhaft</td></tr>
+<tr><td><code>/creator war allow</code></td><td>alle (für sich selbst)</td><td>Kriegserklärungen wieder zulassen (Standard)</td></tr>
+<tr><td><code>/creator war list</code></td><td>alle</td><td>laufende und angebotene Kriege</td></tr>
+<tr><td><code>/creator war accept &lt;id&gt;</code></td><td>herausgeforderter Spieler</td><td>Krieg annehmen — die Siedlung verteidigt sich gegen dich</td></tr>
+<tr><td><code>/creator war decline &lt;id&gt;</code></td><td>herausgeforderter Spieler</td><td>ablehnen — ohne Folgen</td></tr>
+<tr><td><code>/creator war approve &lt;id&gt;</code></td><td>Operator</td><td>Krieg zwischen Siedlungen genehmigen</td></tr>
+<tr><td><code>/creator war peace &lt;id&gt;</code></td><td>beteiligter Spieler / Operator</td><td>Frieden schließen</td></tr>
+<tr><td><code>/creator war surrender &lt;id&gt;</code></td><td>beteiligter Spieler / Operator</td><td>aufgeben</td></tr>
+<tr class=grp><th colspan=3>Vorschläge der Creator</th></tr>
+<tr><td><code>/creator autonomy list</code></td><td>alle</td><td>Aktionen, die Creator vorschlagen (z. B. Clan-Einladung)</td></tr>
+<tr><td><code>/creator autonomy approve &lt;id&gt;</code></td><td>Besitzer / Operator</td><td>Vorschlag ausführen lassen</td></tr>
+<tr class=grp><th colspan=3>Ausrüstung</th></tr>
+<tr><td><code>/kit [name]</code></td><td>Operator</td><td>Kit für dich (ohne Namen: Netherit-Rüstung); Vervollständigung zeigt alle Kits</td></tr>
+<tr><td><code>/kit &lt;name&gt; &lt;target&gt;</code></td><td>Operator</td><td>Kit an einen Creator oder Spieler – für verabredete Kämpfe beide Seiten gleich ausrüsten</td></tr>
+<tr><td><code>/give &lt;creator&gt; &lt;item&gt; [count]</code></td><td>Operator</td><td>Gegenstand ins Inventar eines Creators (wie bei Spielern)</td></tr>
+<tr class=grp><th colspan=3>Test &amp; Wartung</th></tr>
+<tr><td><code>/creator siege start</code></td><td>Operator</td><td>Verteidigungsnacht bei der nächsten Siedlung ankündigen</td></tr>
+<tr><td><code>/creator siege wave</code></td><td>Operator</td><td>sofort eine Angriffswelle</td></tr>
+<tr><td><code>/creator siege end</code></td><td>Operator</td><td>Belagerung beenden</td></tr>
+<tr><td><code>/creator settlement undo_move &lt;id&gt;</code></td><td>Operator</td><td>letzten Umzug einer Siedlung rückgängig machen (altes Zentrum, Zuhause, Hausanker)</td></tr>
+<tr><td><code>/creator perf</code></td><td>Operator</td><td>Lastregler: Stufe, Tickzeit (p95 über 60 s), wie viele Creator fern bzw. nah an Spielern sind</td></tr>
+<tr><td><code>/creator data report</code></td><td>Operator</td><td>Ladebericht der Creator-Daten</td></tr>
+<tr><td><code>/creator say &lt;creator&gt; &lt;emotion&gt; &lt;text&gt;</code></td><td>Operator</td><td>der Creator spricht eine Zeile in Chat und Stimme — für Hörtests; Gefühl: auto, neutral, happy, angry, surprised, sad, scared, taunt</td></tr>
+</table>
+</details>
+
+<h2 id="creator">Die Creator</h2>
+<p>Alle sind erfundene Figuren; Namen und Spitznamen sind Kunstnamen.</p>
+<table><tr><th>Name</th><th>Spitznamen</th><th>Sprache</th><th>Schwerpunkt</th><th>Challenge</th></tr>
+<tr><td><b>Feldhüter</b></td><td>–</td><td>Deutsch</td><td>Projekt-Server</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Fernblick</b></td><td>–</td><td>Deutsch</td><td>Challenges &amp; Hardcore, PvP</td><td>eine Kampfprobe: eine Monsterwelle in 90 Sekunden besiegen</td></tr>
+<tr><td><b>Gartenfritz</b></td><td>–</td><td>Deutsch</td><td>Projekt-Server</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Giebelbauer</b></td><td>–</td><td>Deutsch</td><td>Bauen, Redstone &amp; Technik</td><td>ein Technik-Auftrag: ein Farm-Modul für die Siedlung</td></tr>
+<tr><td><b>Glutherz</b></td><td>–</td><td>Deutsch</td><td>Projekt-Server, Redstone &amp; Technik, Bauen</td><td>ein Technik-Auftrag: bring Ordnung in unser Lager</td></tr>
+<tr><td><b>Hofmann</b></td><td>–</td><td>Deutsch</td><td>Projekt-Server, Bauen</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Markthans</b></td><td>–</td><td>Deutsch</td><td>Projekt-Server</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Ratsherr</b></td><td>–</td><td>Deutsch</td><td>SMP &amp; Story, Herz-Survival, Challenges &amp; Hardcore, PvP</td><td>eine Arena-Welle, die wir zusammen bestehen</td></tr>
+<tr><td><b>Spurfinder</b></td><td>–</td><td>Deutsch</td><td>Challenges &amp; Hardcore, Projekt-Server, Bauen</td><td>eine Hardcore-Probe: eine Nacht draußen überleben, ohne Bett</td></tr>
+<tr><td><b>Steinmetz</b></td><td>–</td><td>Deutsch</td><td>Bauen, Challenges &amp; Hardcore</td><td>eine Hardcore-Probe: eine Nacht draußen überleben, ohne Bett</td></tr>
+<tr><td><b>Stollenwirt</b></td><td>–</td><td>Deutsch</td><td>Projekt-Server</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Tauschmeister</b></td><td>–</td><td>Deutsch</td><td>Projekt-Server, Bauen, Redstone &amp; Technik, Challenges &amp; Hardcore</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Turmbauer</b></td><td>–</td><td>Deutsch</td><td>Bauen, PvP</td><td>eine Verteidigungsprobe: 90 Sekunden Monsterwelle an der Siedlung</td></tr>
+<tr><td><b>Tüftelkopf</b></td><td>–</td><td>Deutsch</td><td>Mods, Redstone &amp; Technik, Bauen, Projekt-Server</td><td>ein Technik-Auftrag: ein Farm-Modul für die Siedlung</td></tr>
+<tr><td><b>Wanda</b></td><td>–</td><td>Deutsch</td><td>Challenges &amp; Hardcore, SMP &amp; Story</td><td>eine Eskorte: bring mich sicher ans Ziel</td></tr>
+<tr><td><b>Wegemann</b></td><td>–</td><td>Deutsch</td><td>Challenges &amp; Hardcore, SMP &amp; Story</td><td>eine Hardcore-Probe: eine Nacht draußen überleben, ohne Bett</td></tr>
+<tr><td><b>ArchVale</b></td><td>–</td><td>Englisch</td><td>Bauen, PvP</td><td>eine Arena-Welle, die wir zusammen bestehen</td></tr>
+<tr><td><b>Bolt</b></td><td>–</td><td>Englisch</td><td>Mods, SMP &amp; Story</td><td>ein Technik-Auftrag: bring Ordnung in unser Lager</td></tr>
+<tr><td><b>Brickwright</b></td><td>–</td><td>Englisch</td><td>Bauen, Challenges &amp; Hardcore</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Gearbeard</b></td><td>–</td><td>Englisch</td><td>Bauen, Redstone &amp; Technik</td><td>ein Technik-Auftrag: ein Farm-Modul für die Siedlung</td></tr>
+<tr><td><b>Highbanner</b></td><td>–</td><td>Englisch</td><td>SMP &amp; Story, Challenges &amp; Hardcore, Mod-Abenteuer</td><td>eine Eskorte: bring mich sicher ans Ziel</td></tr>
+<tr><td><b>Quickfoot</b></td><td>–</td><td>Englisch</td><td>Challenges &amp; Hardcore, SMP &amp; Story</td><td>eine Späherprobe: einen Ort weit draußen finden und zurückkommen</td></tr>
+<tr><td><b>Ravenblade</b></td><td>–</td><td>Englisch</td><td>PvP, Lifesteal</td><td>eine Kampfprobe: eine Monsterwelle in 90 Sekunden besiegen</td></tr>
+<tr><td><b>Roofsmith</b></td><td>–</td><td>Englisch</td><td>Bauen</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Skyforge</b></td><td>–</td><td>Englisch</td><td>Bauen, SMP &amp; Story</td><td>eine Eskorte: bring mich sicher ans Ziel</td></tr>
+<tr><td><b>Steelhowl</b></td><td>–</td><td>Englisch</td><td>SMP &amp; Story, Challenges &amp; Hardcore, PvP, Lifesteal, Mod-Abenteuer</td><td>eine Verteidigungsprobe: 90 Sekunden Monsterwelle an der Siedlung</td></tr>
+<tr><td><b>Stonewhistle</b></td><td>–</td><td>Englisch</td><td>Bauen, SMP &amp; Story</td><td>eine Bauprobe: verschönere unsere Siedlung</td></tr>
+<tr><td><b>Stormwatch</b></td><td>–</td><td>Englisch</td><td>SMP &amp; Story, Mod-Abenteuer, Challenges &amp; Hardcore, Lifesteal</td><td>eine Späherprobe: einen Ort weit draußen finden und zurückkommen</td></tr>
+<tr><td><b>Swiftwing</b></td><td>–</td><td>Englisch</td><td>SMP &amp; Story, Challenges &amp; Hardcore, Mod-Abenteuer</td><td>eine Expedition: bring mir etwas aus einer fernen Gegend</td></tr>
+<tr><td><b>TrailRunner</b></td><td>–</td><td>Englisch</td><td>Challenges &amp; Hardcore</td><td>eine Hardcore-Probe: eine Nacht draußen überleben, ohne Bett</td></tr>
+<tr><td><b>Wildspark</b></td><td>–</td><td>Englisch</td><td>Challenges &amp; Hardcore, Speedrun</td><td>eine Expedition: bring mir etwas aus einer fernen Gegend</td></tr>
+<tr><td><b>Wrenna</b></td><td>–</td><td>Englisch</td><td>Challenges &amp; Hardcore, Fallen</td><td>eine Verteidigungsprobe: 90 Sekunden Monsterwelle an der Siedlung</td></tr>
+</table>
+
+<p class="en">Alle Creator auf diesem Server sind fiktive KI-Figuren ohne Verbindung zu realen Personen. ·
+Erzeugt aus den Daten der Mod (tools/guide/make_guide.py). · <a href="guide_en.html" hreflang="en">English version</a></p>
+<script>
+if (location.hostname) { document.querySelectorAll('code.host').forEach(c => c.textContent = location.hostname); }
+</script>
+</body>
+</html>

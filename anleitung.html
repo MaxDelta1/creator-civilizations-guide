@@ -267,31 +267,49 @@ und was es verhindert hätte.</p>
 <h2 id="neu">Neu</h2>
 <p>Seit <b>1.0</b> wird jedes Update auf unserem Live-Server geprüft: Creator, Aufträge, Truhen und Siedlungen müssen es überstehen. Vor Updates trotzdem die Welt sichern.
 Feedback und Fehlerberichte im <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#bugs, #ideas).</p>
-<h3>Neu in 1.0.4</h3>
+<h3>Neu in 1.0.5</h3>
 <ul>
-  <li>Einzelspieler: automatisch an unter `http://127.0.0.1:8000/` (nächster freier Port bis 8009), nur auf dem eigenen Rechner.</li>
-  <li>Server: ab Werk aus. Mit `"web": {"port": 8000}` in `config/creatorcivilizations/server.json` einschalten (optional `"bind"` und `"publicUrl"`). Belegt schon ein anderer Webserver den Port, nutzt die Mod diesen weiter.</li>
-  <li>Nur lesend: nur Dateien im Ordner `client/`, nur GET und HEAD.</li>
-  <li>Rundmeldungen (Start, Wettrennen, Erstleistungen, Chronik) kommen in der Spielsprache jedes Spielers statt in der Chroniksprache des Servers.</li>
-  <li>Live-Seite und Anleitung sind ab der ersten Sekunde da, kein „nicht gefunden“ direkt nach dem Weltstart.</li>
-  <li>Jeder neue Spieler wird von einem Creator begrüßt, auch auf Welten, auf denen die Führer schon weit sind.</li>
-  <li>Die Erinnerung „schreib go“ erscheint 10 Sekunden nach dem Betreten statt bis zu zwei Minuten später.</li>
-  <li>Zu einer Expedition lädt nur noch der nächste Führer ein, einmal je Ziel, und nie mehr, wenn man schon Begleiter ist. Vorher fragten alle Führer in der Nähe gleichzeitig.</li>
-  <li>In der Abendrunde hört ein Spieler jedes Ereignis einmal, auch wenn mehrere Dörfer nah sind.</li>
-  <li>Eine zweite Welt in derselben Sitzung zeigt auf der Live-Seite nicht mehr die Tode der ersten.</li>
-  <li>Führer schießen nicht mehr durch einen Freund: Steht ein anderer Creator oder ein Spieler in der Schusslinie, bleibt der Bogen gespannt, bis die Linie frei ist (ein Laborlauf verlor 24 Enderperlen durch eigene Pfeile am Lohen-Spawner).</li>
-  <li>Keine Suche nach Eichen im Nether mehr, nur Karmesin- und Wirrstiele.</li>
-  <li>Am Festungspfeiler steigen sie zur Brücke hinauf, statt am Fuß umzukehren.</li>
-  <li>Rückweg aus dem End: Ein beschworener Drache zählt für jeden Creator in der Arena, ein später Führer hält Abstand zu einer fremden Beschwörung und kämpft erst gegen einen lebenden Drachen, und wer auf dem Heimweg strandet, wirft sich mit einer Perle zurück an Land.</li>
-  <li>Mit abgenutzter Spitzhacke geht ein Führer heim, bevor sie im Nether bricht; ein Sprung gilt nicht mehr als Sturz in die Leere.</li>
-  <li>Dorfbauwerke werden wieder fertig. Seit einigen Tagen hing jedes Dorf an einem Bau, der weiße Terrakotta braucht, die es nur in Tafelbergen gibt; Dörfer wählen solche Bauten jetzt nur, wenn sie eine Quelle kennen, und eine vergebliche Suche wird nicht den ganzen Tag wiederholt.</li>
-  <li>Die Großstadt-Stufe ist erreichbar: Die verlangte Zahl an Häusern richtet sich nach der Zahl der Mitglieder (wie bei den Betten), und bewaffnet aufgebrochene Mitglieder zählen auf Expedition für die Verteidigung.</li>
-  <li>Keine endlose Schmelzschleife mehr bei vollem Erztrichter, und beim Abbau von Gerüsten wird ein Block mit jemandem daneben übersprungen, statt immer wieder daran zu scheitern.</li>
-  <li>Das Bett eines Mitglieds im Nether oder im End zählt wieder fürs Dorf, auch nach einem Neustart.</li>
-  <li>Wer während eines Umzugs unterwegs war, bekommt das neue Zuhause.</li>
-  <li>Ein neues Feld zu bewässern leert nicht mehr das Nachbarfeld; gesät wird von überall, wo der Creator hinreicht.</li>
-  <li>Der Tod eines Führers wird als richtiger Satz auf Deutsch und Englisch gemeldet, keine englischen Todesmeldungen mehr mitten im deutschen Satz.</li>
-  <li>Dorfstufen zeigen ihren Namen statt eines Rohwerts, Siedlungsnamen nach s, x und z stimmen („Markthans’ Siedlung“), Krieg und Clan richten sich nach der Sprache jedes Spielers, und die Chronik hat für Expeditionsberichte echten englischen Text.</li>
+  <li>Führer gehen direkt zur Brücke der Netherfestung, statt unter ihren Pfeilern zu landen. Sie erkennen den Brückenpfeiler an seiner Ziegelsäule, gehen zur Lauffläche und steigen hinauf, statt den Pfeiler abzubauen; ein selbst gegrabener Schacht gilt nicht mehr als Festungsgang.</li>
+  <li>Wer über Abgründe zur Netherfestung gräbt, holt rechtzeitig Bausteine nach, statt mit leerem Gepäck auf der Spitze seiner Brücke zu stehen.</li>
+  <li>Die Suche nach der Netherfestung geht über mehrere Reisen weiter: Schon durchsuchte Gegenden werden gemerkt, und die nächste Reise setzt dort an, wo die letzte aufgehört hat.</li>
+  <li>Mit Eisenbrust und Schild bleiben Führer an der Netherfestung, statt umzukehren.</li>
+  <li>Ein brennendes Portal baut kein Creator mehr ab (vorher brachen Stollen oder Treppen manchmal gleich nach dem Zünden den gemeinsamen Rahmen), und ein Führer kennt das brennende Portal seines Partners, statt mit Lava ein neues zu bauen.</li>
+  <li>Führer halten auf jedem Weg Abstand zu Bastionen und bauen kein Nethergold mehr neben den Piglin-Barbaren ab. Der Schwarzstein eines Portalruins gilt nicht mehr als Bastion.</li>
+  <li>Creator kämpfen jetzt wie ein Spieler gegen Ghasts und schießen bis 64 Blöcke zurück, aber nur mit Schussmitteln und nie mit den Pfeilen, die fürs End zurückgelegt sind.</li>
+  <li>Wer brennend hinter Deckung steht, isst, statt weiterzukämpfen, und ohne Deckung tritt ein Führer vor einer Lohe zurück, statt im Feuer stehen zu bleiben.</li>
+  <li>Verletzt unter Tage steigen Führer zuerst an die Oberfläche. Am Portal warten sie auf Heilung, geben aber auf, wenn sie nicht kommt, und gehen nie halb tot hindurch.</li>
+  <li>Keine Brücken aus Kies oder Sand mehr über Lava oder der Leere.</li>
+  <li>Der Boden eines Stollens über einem Lavasee wird aus sprengfestem Stein gebaut, ein Ghast kann ihn also nicht mehr wegsprengen.</li>
+  <li>Lava, die in eine Grabung laufen würde, wird abgedichtet, bevor der Block abgebaut wird.</li>
+  <li>Unter Ghast-Beschuss treten Führer von schmalen Bändern zurück.</li>
+  <li>Am Lohen-Spawner versuchen Führer nicht mehr, aus dem Lavabecken hochzuklettern.</li>
+  <li>Unter Wasser eingeschlossene Führer schwimmen hinaus ins offene Wasser.</li>
+  <li>Niemand baut mehr den Rahmen eines bekannten Portals für Obsidian ab.</li>
+  <li>Für Steinwerkzeug nehmen Führer zuerst Bruchstein aus der eigenen Truhe.</li>
+  <li>Eine Diamantspitzhacke zählt auch als Eisenspitzhacke, niemand sucht also unnötig nach Eisen.</li>
+  <li>Ihre Sachen im Nether holen Führer schon mit Teilrüstung (Brustpanzer und Schild), statt auf eine volle Rüstung zu warten.</li>
+  <li>Kleine Lücken in der Wendeltreppe der Festung werden überquert, statt die Reise zu beenden.</li>
+  <li>Der Silberfisch-Spawner im Portalraum wird zuerst abgebaut, und der Ring wird gefüllt, bevor die Ausrüstung fürs End geholt wird.</li>
+  <li>Ein Ring, den ein anderer Führer in der Nähe schon geöffnet hat, wird genutzt, eingelagerte Augen zählen mit, und Führer holen sie aus dem Lager, statt neue zu sammeln.</li>
+  <li>Festungen unter dem Meer: Reicht die Luft, tauchen Führer durch bis zu etwa 40 Blöcke Wasser direkt zum abgedichteten Schacht, statt auf halbem Weg umzukehren.</li>
+  <li>Unter Wasser suchen Führer nur Luft, die ihr Körper wirklich erreicht, und tauchen schneller ab.</li>
+  <li>Nie ohne Essen ins End. Verletzt und ohne Essen pflücken und essen Führer zuerst Chorusfrüchte und jagen erst dann Endermen nach Perlen.</li>
+  <li>Führer gehen heim, wenn Spitzhacke oder Blöcke ausgehen, und eine abgenutzte Spitzhacke zählt nach ihrer Resthaltbarkeit.</li>
+  <li>Angesteuert werden nur echte End-Schiffe, kein selbst gesetzter Obsidian. Auf dem Weg hinauf zum Schiff bauen sie mit Purpur und Endsteinziegeln der Stadt, statt End-Stein von 60 Blöcken weiter unten zu holen.</li>
+  <li>Einen Turm, den ein Führer nicht erreicht oder nicht betreten kann, gibt er auf und sucht weiter, auch wenn er dort nie einen Stand gefunden hat.</li>
+  <li>Wer im End auf einer kleinen Insel strandet, wirft sich in jeder Lage mit einer Perle zurück an Land, nicht nur auf dem Heimweg.</li>
+  <li>Tode in der Leere erscheinen jetzt auf der Live-Seite.</li>
+  <li>Ertrinken: Creator prüfen den Platz über dem ganzen Körper und schwimmen unter Booten seitlich hinaus (die Hälfte der auf dem Live-Server ertrunkenen Siedler hing unter einem Boot). Ein versperrter Weg zur Luft wird verworfen, und nachfließendes Wasser im gefluteten Schacht wird zugesetzt.</li>
+  <li>Nach einem Sturz holen Creator ihre Sachen zurück. Führer ohne Rüstung holen Sachen aus einer anderen Dimension nur bei Tag und geben auf offener See verlorene Sachen auf.</li>
+  <li>Creator gehen um ein Netherportal herum, statt hineinzustolpern.</li>
+  <li>Eine Lagerecke statt Truhenhaufen: Ein Creator füllt erst eine Truhe mit Platz am Lager, bevor er eine neue stellt (um eine Siedlung standen 371 Truhen).</li>
+  <li>Eine unerreichbare Werkbank oder ein unerreichbarer Komposter wird gemerkt, und der Creator nimmt einen anderen, statt jedes Mal einen neuen aufzustellen.</li>
+  <li>Weniger sinnlose Treppen und Brücken durch die Luft, und liegen gebliebenes Gerüst wird jeden Tag abgeräumt.</li>
+  <li>Von Creatorn gestellte Truhen gelten nicht mehr als Spielertruhen, ein eingemauerter Creator kann sich also freigraben.</li>
+  <li>Mit Beute heimgekehrt, lagert ein Führer sie zuerst ein. Geliefert wird nur mit Platz im Inventar, und ein Creator, der immer wieder an einer Aufgabe scheitert, wird befreit, statt untätig herumzustehen.</li>
+  <li>Ein Ereignis, eine Zeile: Der Tod eines Führers kommt nicht mehr doppelt, und ein Wettrennen, das zugleich ein Kettenmeilenstein ist, wird einmal gemeldet.</li>
+  <li>Die Chronik-Zusammenfassung kommt höchstens einmal pro Stunde und Spieler und nur mit Neuem, statt an jedem Spieltag.</li>
+  <li>Befehlsantworten kommen in der Spielsprache jedes Spielers.</li>
 </ul>
 
 <h2 id="fehlersuche">Fehlersuche</h2>

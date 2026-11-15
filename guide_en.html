@@ -257,31 +257,49 @@ have prevented it.</p>
 <h2 id="new">New</h2>
 <p>Since <b>1.0</b> every update is checked on our live server: creators, missions, chests and settlements must survive it. Still, back up your world before updating.
 Feedback and bug reports on <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#bugs, #ideas).</p>
-<h3>New in 1.0.4</h3>
+<h3>New in 1.0.5</h3>
 <ul>
-  <li>Singleplayer: on automatically at `http://127.0.0.1:8000/` (next free port up to 8009), only on your own computer.</li>
-  <li>Servers: off by default. Set `"web": {"port": 8000}` in `config/creatorcivilizations/server.json` to turn it on (optional `"bind"` and `"publicUrl"`). If the port is taken by another web server, the mod keeps using that one.</li>
-  <li>Read-only: only files in the `client/` folder, GET and HEAD only.</li>
-  <li>Announcements (start, races, firsts, chronicle) now come in each player's own game language instead of the server's chronicle language.</li>
-  <li>The live page and the guide are there from the first second, no more "not found" right after starting a world.</li>
-  <li>Every new player is greeted by a creator, also on worlds where the leaders are already far along.</li>
-  <li>The "type go" reminder shows up 10 seconds after joining instead of up to two minutes later.</li>
-  <li>A player is invited to an expedition only once per goal, by the nearest leader, and never again while already a companion. Before, every leader nearby asked at the same time.</li>
-  <li>At the evening round, a player hears each event once, even when several villages are close.</li>
-  <li>A second world in the same session no longer shows the deaths of the first one on the live page.</li>
-  <li>Leaders no longer shoot through a friend: with another creator or a player in the line of fire, the bow stays drawn until the line is clear (one lab run lost 24 ender pearls to friendly arrows at a blaze spawner).</li>
-  <li>No more searching for oak trees in the Nether, only crimson and warped stems.</li>
-  <li>At a fortress pillar they climb to the bridge on top instead of turning home at its foot.</li>
-  <li>Leaving the End: a summoned dragon counts for every creator in the arena, a late leader keeps clear of someone else's summoning and fights a living dragon first, and a leader stranded on the way home pearls back to land.</li>
-  <li>A leader with a worn pickaxe heads home before it breaks in the Nether; a jump is no longer mistaken for a fall into the void.</li>
-  <li>Village buildings get finished again. Since a few days every village was stuck on a building that needs white terracotta, which only exists in badlands; villages now only pick such buildings when they know a source, and a search that found nothing is not repeated all day.</li>
-  <li>The city tier can be reached: the house count it asks for follows the number of members (like beds), and members away on an expedition count for the defence when they left armed.</li>
-  <li>No more endless smelting loop when the ore hopper is full, and cleaning up scaffolding skips a block with someone standing next to it instead of failing on it again and again.</li>
-  <li>A member's bed in the Nether or the End counts for the village again, also after a restart.</li>
-  <li>Members who were away during a move get the new home.</li>
-  <li>Watering a new field no longer drains the neighbouring field; seeds are sown from wherever the creator can reach.</li>
-  <li>A leader's death is announced as a proper sentence in German and English, no more English death messages inside German sentences.</li>
-  <li>Village tiers show their name instead of a raw value, settlement names after s, x and z read correctly in German, war and clan messages follow each player's language, and the chronicle has real English text for expedition reports.</li>
+  <li>Leaders head straight for the fortress bridge instead of ending up under its pillars. They recognise a bridge pillar by its brick column, go to the walkway and climb up instead of mining the pillar away; a shaft they dug themselves no longer counts as a fortress corridor.</li>
+  <li>Leaders digging towards the fortress over chasms fetch more blocks in time instead of standing on the tip of their bridge with nothing left to build.</li>
+  <li>The fortress search carries on over several trips: areas already searched are remembered, and the next trip picks up where the last one ended.</li>
+  <li>With an iron chestplate and a shield, leaders stay at the fortress instead of turning home.</li>
+  <li>A lit portal is no longer mined by any creator (before, tunnels or stairs sometimes broke the shared frame right after it was lit), and a leader knows the lit portal of their partner instead of building a new one with lava.</li>
+  <li>Leaders keep clear of bastions on every path and no longer mine Nether gold next to the piglin brutes. The blackstone of a ruined portal is no longer mistaken for a bastion.</li>
+  <li>Creators now fight ghasts like a player and shoot back up to 64 blocks, but only with something to shoot and never with the arrows saved for the End.</li>
+  <li>A leader burning behind cover eats instead of fighting on, and without cover a leader steps back from a blaze instead of standing in the fire.</li>
+  <li>Injured underground, leaders climb to the surface first. At the portal they wait to heal, but give up when it doesn't come, and never step through nearly dead.</li>
+  <li>No more bridges of gravel or sand over lava or the void.</li>
+  <li>The floor of a tunnel over a lava lake is built from blast-proof stone, so a ghast can no longer blow it away.</li>
+  <li>Lava that would run into a dig is sealed off before the block is mined.</li>
+  <li>Under ghast fire, leaders step back from narrow ledges.</li>
+  <li>At the blaze spawner, leaders no longer try to climb up out of the lava pool.</li>
+  <li>Leaders trapped under water swim out to open water.</li>
+  <li>Nobody mines the frame of a known portal for its obsidian any more.</li>
+  <li>For stone tools, leaders take cobblestone from their own chest first.</li>
+  <li>A diamond pickaxe also counts as an iron pickaxe, so nobody goes looking for iron they don't need.</li>
+  <li>Leaders go back for their items in the Nether already with partial armour (chestplate and shield) instead of waiting for a full set.</li>
+  <li>Small gaps in the stronghold's spiral staircase are crossed instead of ending the trip.</li>
+  <li>The silverfish spawner in the portal room is broken first, and the ring is filled before gearing up for the End.</li>
+  <li>A ring that another leader already opened nearby is used, eyes stored in chests count, and leaders take them from storage instead of collecting new ones.</li>
+  <li>Strongholds under the sea: when the air lasts, leaders dive straight down through up to about 40 blocks of water to the sealed shaft instead of turning back halfway.</li>
+  <li>Under water, leaders only head for air their body can actually reach, and they dive down faster.</li>
+  <li>Never into the End without food. Injured and without food, leaders pick and eat chorus fruit first and only then hunt endermen for pearls.</li>
+  <li>Leaders head home when pickaxe or blocks run out, and a worn pickaxe counts by how much is left on it.</li>
+  <li>Only real End ships are targeted, not obsidian the leaders placed themselves. On the way up to a ship they build with the city's purpur and end stone bricks instead of fetching end stone from 60 blocks below.</li>
+  <li>A tower that can't be reached or entered is given up and the search moves on, also when the leader never found a place to stand at it.</li>
+  <li>A leader stranded on a small island in the End throws a pearl back to land in every situation, not only on the way home.</li>
+  <li>Deaths in the void now show up on the live page.</li>
+  <li>Drowning: creators check the space above their whole body and swim out sideways under boats (half of the settlers who drowned on the live server were stuck under a boat). A blocked way to air is dropped, and flowing water in a flooded shaft gets plugged.</li>
+  <li>After a fall, creators go back for their items. Leaders without armour fetch items from another dimension only by day and give up items lost on the open sea.</li>
+  <li>Creators walk around a Nether portal instead of stumbling through it.</li>
+  <li>A storage corner instead of chest piles: a creator fills a chest with room at the store before placing a new one (one settlement had 371 chests around it).</li>
+  <li>A crafting table or composter that can't be reached is remembered, and the creator uses another one instead of placing a new one every time.</li>
+  <li>Fewer pointless stairs and bridges through the air, and leftover scaffolding is cleaned up every day.</li>
+  <li>Chests placed by creators are no longer treated as player chests, so a boxed-in creator can dig free.</li>
+  <li>Back home with loot, a leader stores it first. Deliveries only happen with room in the inventory, and a creator who keeps failing at a task gets rescued instead of standing idle.</li>
+  <li>One event, one line: a leader's death no longer comes twice, and a race that is also a chain milestone is announced once.</li>
+  <li>The chronicle summary comes at most once an hour per player and only with what is new, instead of every game day.</li>
+  <li>Command replies come in each player's own game language.</li>
 </ul>
 
 <h2 id="troubleshooting">Troubleshooting</h2>

@@ -257,30 +257,37 @@ have prevented it.</p>
 <h2 id="new">New</h2>
 <p>Since <b>1.0</b> every update is checked on our live server: creators, missions, chests and settlements must survive it. Still, back up your world before updating.
 Feedback and bug reports on <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#bugs, #ideas).</p>
-<h3>New in 1.0.6</h3>
+<h3>New in 1.0.7</h3>
 <ul>
-  <li>One rule now decides when a leader is ready for the Nether, the same for entering, recovering items and heading home: never in with too little health, and enough armour and food before stepping through.</li>
-  <li>A leader who has already been through a portal no longer waits there endlessly for armour, and a gate that was given up no longer counts as a stalled chain.</li>
-  <li>After lighting the portal, leaders stay at it instead of wandering off, and they reach a deep portal over a staircase from the shore.</li>
-  <li>Every portal now gets a block to step on in front of it, so it can always be entered.</li>
-  <li>With a single pickaxe and no way to make a spare, leaders collect wood before going deep for lava.</li>
-  <li>A burning leader retreating from a blaze now really steps into the cover next to him, instead of standing still in the fire.</li>
-  <li>At the blaze spawner, leaders arrive at the height of the cage and wait on a spot without lava.</li>
-  <li>Injured leaders without healing food no longer provoke endermen.</li>
-  <li>On the first day, leaders search for lava deep underground instead of only at the surface, and they remember lava they have seen.</li>
-  <li>Lava below water is reached from under the sea floor or from the nearest dry shore.</li>
-  <li>Leaders only pick a lava pool where a portal frame can actually be built and reached, and pick up a half-finished frame again.</li>
-  <li>When lava is above them, leaders climb up first or give up on that source.</li>
-  <li>Respawned at night without armour, leaders first build a shelter before going back for their items.</li>
-  <li>Recovering items follows the same readiness rule as entering the Nether.</li>
-  <li>Leaders collect the paths of their thrown eyes and work out the stronghold from all of them together, also across a lake by boat.</li>
-  <li>Climbing without a pickaxe no longer hangs forever: the leader gives up and makes a pickaxe.</li>
-  <li>Leaders no longer build a new pillar on top of their own pillar.</li>
-  <li>Tree search no longer loops at a dead tree crown.</li>
-  <li>Scaffolding is cleaned up reliably.</li>
-  <li>Fields, wood and gathering spots next to a recent drowned attack are avoided for a while, and creators chased by a trident swim to land.</li>
-  <li>No mining in a ring of 48 blocks around a settlement, so the area stays beautiful.</li>
-  <li>Many village behaviours that proved themselves are now always on.</li>
+  <li>Settlements can now fall out with each other: plundering, crossing borders or attacking a member builds up a feud. A starving settlement may raid a neighbour for food.</li>
+  <li>Before a war there is an ultimatum of one game day. The war is announced with a title, a raid horn and a boss bar with the time left, and it ends after two losses or when one side can no longer defend itself.</li>
+  <li>During an ultimatum, a weak side can hand the loot back. In a war, a settlement can try to win back its own loot, build a palisade for a siege, or settle it in a non-lethal champion duel with a tribute agreement.</li>
+  <li>Houses are never broken in a war, not even those of absent members; only war structures can be destroyed.</li>
+  <li>Leaders on a chain mission stay out of wars.</li>
+  <li>A mace or spear now counts as a weapon when a creator decides whether he is armed.</li>
+  <li>Server owners can require player approval before a war starts (`requirePlayerApproval`, default off).</li>
+  <li>Creators no longer flee from a player unless they really have a way to escape, and the sprint is no longer counted twice when they compare speed.</li>
+  <li>They raise the shield against a charged hit only when the attacker can actually reach them.</li>
+  <li>Unarmed creators do not start a melee against players and no longer join a fight just to defend an ally with bare hands.</li>
+  <li>A shield stance now strikes back after a while even without an opening.</li>
+  <li>When an axe has disabled his shield and the player is stronger, a creator backs off out of reach until his own swing is charged, instead of trading hits.</li>
+  <li>When all entry conditions are met, leaders also go to a nearby portal at night.</li>
+  <li>Mining for iron: a field dig stays open when a leader only stops to refill, and leaders remember places where a descent failed instead of trying the same spot again and again.</li>
+  <li>A wooden pickaxe made on the way home is only used for the way home; the leader still builds a proper pickaxe for mining.</li>
+  <li>With a worn pickaxe, leaders climb back home under the same rules as when climbing out of a mine.</li>
+  <li>After a death in the Nether, leaders fetch gold again before going back in.</li>
+  <li>Leaders leave a shelter on a stormy day by the time of day.</li>
+  <li>Tree search avoids outposts and places where a creator was killed by arrows.</li>
+  <li>Forgotten stronghold sightings are noted again.</li>
+  <li>On the way home, leaders start from the nearest trail mark instead of the first one, and a Nether fortress only counts as visited once they have actually arrived there.</li>
+  <li>Footing follows Vanilla: where a creator stands, where he lands, how much a fall hurts, and how long fire burns.</li>
+  <li>Tunnels watch for lava flowing in from above; escaping lava takes the path with the fewest lava steps, and cave targets are never next to lava.</li>
+  <li>Leaders no longer walk into the same deadly beach full of drowned again and again.</li>
+  <li>Climbing down scaffolding works even when the block above the head is taken, and the scaffolding is picked up again.</li>
+  <li>Several hangs at edges, stairs and pillars are fixed.</li>
+  <li>Creators can dig into trial chambers the way a player can; breezes, trial omen and detectors behave like Vanilla.</li>
+  <li>Building is faster: wrong blocks on a site are cleared, blocks that cannot be placed are skipped, and doors face the right way.</li>
+  <li>Voice packs and custom voices now download from GitHub Releases first, with Modrinth as fallback.</li>
 </ul>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -539,7 +546,7 @@ matches several, you get the normal error message.</p>
 <tr><td><code>/creator war list</code></td><td>everyone</td><td>running and offered wars</td></tr>
 <tr><td><code>/creator war accept &lt;id&gt;</code></td><td>challenged player</td><td>accept a war — the settlement defends itself against you</td></tr>
 <tr><td><code>/creator war decline &lt;id&gt;</code></td><td>challenged player</td><td>decline — no consequences</td></tr>
-<tr><td><code>/creator war approve &lt;id&gt;</code></td><td>operator</td><td>approve a war between settlements</td></tr>
+<tr><td><code>/creator war approve &lt;id&gt;</code></td><td>operator</td><td>approve a war between settlements (only with war.requirePlayerApproval=true; otherwise it starts when the ultimatum runs out)</td></tr>
 <tr><td><code>/creator war peace &lt;id&gt;</code></td><td>involved player / operator</td><td>make peace</td></tr>
 <tr><td><code>/creator war surrender &lt;id&gt;</code></td><td>involved player / operator</td><td>surrender</td></tr>
 <tr class=grp><th colspan=3>Creator proposals</th></tr>

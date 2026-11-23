@@ -267,30 +267,37 @@ und was es verhindert hätte.</p>
 <h2 id="neu">Neu</h2>
 <p>Seit <b>1.0</b> wird jedes Update auf unserem Live-Server geprüft: Creator, Aufträge, Truhen und Siedlungen müssen es überstehen. Vor Updates trotzdem die Welt sichern.
 Feedback und Fehlerberichte im <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#bugs, #ideas).</p>
-<h3>Neu in 1.0.6</h3>
+<h3>Neu in 1.0.7</h3>
 <ul>
-  <li>Eine Regel entscheidet jetzt, wann ein Führer bereit für den Nether ist, gleich für Eintritt, Bergung und Heimweg: nie mit zu wenig Leben hinein, und vorher genug Rüstung und Essen.</li>
-  <li>Wer schon einmal durch ein Portal gegangen ist, wartet dort nicht mehr endlos auf Rüstung, und ein aufgegebenes Tor zählt nicht als stehengebliebene Kette.</li>
-  <li>Nach dem Zünden bleiben Führer am Portal, statt wegzulaufen, und erreichen ein tiefes Portal über eine Treppe vom Ufer.</li>
-  <li>Jedes Portal bekommt einen Tritt davor, sodass es immer betretbar ist.</li>
-  <li>Mit nur einer Spitzhacke und ohne Ersatz sammeln Führer erst Holz, bevor sie tief nach Lava graben.</li>
-  <li>Ein brennender Führer, der vor einer Lohe zurückweicht, tritt jetzt wirklich in die Deckung neben sich, statt im Feuer stehen zu bleiben.</li>
-  <li>Am Lohen-Spawner kommen Führer auf Käfighöhe an und warten an einer Stelle ohne Lava.</li>
-  <li>Verletzte Führer ohne heilendes Essen reizen keine Endermen mehr.</li>
-  <li>Am ersten Tag suchen Führer Lava tief unter Tage statt nur an der Oberfläche und merken sich gesehene Lava.</li>
-  <li>Lava unter Wasser holen sie von unter dem Meeresgrund oder vom nächsten trockenen Ufer.</li>
-  <li>Führer wählen nur einen Lavasee, an dem ein Portalrahmen wirklich baubar und erreichbar ist, und nehmen einen halbfertigen Rahmen wieder auf.</li>
-  <li>Liegt die Lava über ihnen, steigen sie erst auf oder verwerfen die Quelle.</li>
-  <li>Nachts ohne Rüstung wiederbelebt, bauen Führer zuerst einen Unterschlupf, bevor sie ihre Sachen holen.</li>
-  <li>Die Bergung folgt derselben Bereitschaftsregel wie der Nether-Eintritt.</li>
-  <li>Führer sammeln die Bahnen ihrer geworfenen Augen und bestimmen die Festung aus allen zusammen, auch über einen See per Boot.</li>
-  <li>Klettern ohne Spitzhacke hängt nicht mehr ewig: der Führer gibt auf und baut eine Hacke.</li>
-  <li>Führer bauen keine neue Säule mehr auf ihrer eigenen Säule.</li>
-  <li>Die Baumsuche hängt nicht mehr an einer toten Baumkrone.</li>
-  <li>Gerüste werden zuverlässig abgebaut.</li>
-  <li>Felder, Holz und Sammelplätze nahe einem frischen Ertrunkenen-Angriff werden eine Weile gemieden, und von einem Dreizack Verfolgte schwimmen an Land.</li>
-  <li>Kein Abbau mehr im Umkreis von 48 Blöcken um eine Siedlung, damit die Gegend schön bleibt.</li>
-  <li>Viele bewährte Dorf-Verhaltensweisen sind jetzt fest eingebaut.</li>
+  <li>Siedlungen können sich jetzt verfeinden: Plündern, Grenzverletzung oder ein Angriff auf ein Mitglied bauen eine Feindschaft auf. Eine hungernde Siedlung plündert unter Umständen bei der Nachbarin Essen.</li>
+  <li>Vor einem Krieg gibt es ein Ultimatum von einem Spieltag. Der Krieg wird mit Titel, Raid-Horn und einer Bossbar mit Restzeit angekündigt und endet nach zwei Verlusten oder wenn eine Seite wehrlos ist.</li>
+  <li>Im Ultimatum kann eine schwache Seite die Beute zurückgeben. Im Krieg kann eine Siedlung ihre eigene Beute zurückholen, eine Palisade für eine Belagerung bauen oder den Streit in einem nicht tödlichen Champion-Duell mit Tribut-Vertrag beilegen.</li>
+  <li>Häuser werden im Krieg nie abgerissen, auch nicht die abwesender Mitglieder; zerstörbar sind nur Kriegsbauten.</li>
+  <li>Führer auf einer Kettenmission halten sich aus Kriegen heraus.</li>
+  <li>Streitkolben und Speer zählen jetzt als Waffe, wenn ein Creator prüft, ob er bewaffnet ist.</li>
+  <li>Serverbetreiber können verlangen, dass ein Spieler einem Krieg zustimmt (`requirePlayerApproval`, Standard aus).</li>
+  <li>Creator fliehen vor einem Spieler nur noch, wenn sie wirklich ein Fluchtmittel haben, und der Sprint zählt beim Tempovergleich nicht mehr doppelt.</li>
+  <li>Den Schild heben sie gegen einen geladenen Schlag nur, wenn der Angreifer sie auch erreicht.</li>
+  <li>Unbewaffnete Creator beginnen keinen Nahkampf gegen Spieler und verteidigen Verbündete nicht mehr mit bloßen Händen.</li>
+  <li>Aus dem Schildstand schlagen sie nach einer Weile auch ohne Öffnung zurück.</li>
+  <li>Hat eine Axt den Schild stillgelegt und ist der Spieler stärker, weicht ein Creator aus der Reichweite zurück, bis sein eigener Schlag geladen ist, statt Schläge zu tauschen.</li>
+  <li>Sind alle Eintrittsbedingungen erfüllt, gehen Führer auch nachts zu einem nahen Portal.</li>
+  <li>Eisen: Ein Feld-Gang bleibt offen, wenn ein Führer nur zum Nachfüllen unterbricht, und Führer merken sich Stellen, an denen ein Abstieg gescheitert ist, statt es immer wieder dort zu versuchen.</li>
+  <li>Eine auf dem Heimweg gebaute Holzhacke dient nur dem Heimweg; zum Abbau baut der Führer weiterhin eine richtige Hacke.</li>
+  <li>Mit verschlissener Hacke steigen Führer unter denselben Regeln heim wie beim Aufstieg aus einer Mine.</li>
+  <li>Nach einem Tod im Nether holen Führer zuerst wieder Gold, bevor sie zurückgehen.</li>
+  <li>An einem Gewittertag verlassen Führer den Unterschlupf nach der Tageszeit.</li>
+  <li>Die Baumsuche meidet Außenposten und Stellen, an denen ein Creator durch Pfeile starb.</li>
+  <li>Vergessene Festungssichtungen werden neu gemerkt.</li>
+  <li>Auf dem Heimweg starten Führer an der nächsten Wegmarke statt an der ersten, und eine Netherfestung gilt erst als besucht, wenn sie dort angekommen sind.</li>
+  <li>Stand und Landung folgen Vanilla: wo ein Creator steht, wo er aufkommt, wie viel ein Sturz schadet und wie lange Feuer brennt.</li>
+  <li>Stollen achten auf Lava, die von oben einfließt; die Flucht vor Lava nimmt den Weg mit den wenigsten Lavaschritten, und Höhlenziele liegen nie an Lava.</li>
+  <li>Führer laufen nicht mehr immer wieder an denselben tödlichen Strand voller Ertrunkener.</li>
+  <li>Der Gerüstabstieg klappt auch, wenn der Block über dem Kopf belegt ist, und das Gerüst wird wieder eingesammelt.</li>
+  <li>Mehrere Hänger an Kanten, Treppen und Säulen sind behoben.</li>
+  <li>Creator graben sich in Prüfungskammern ein wie ein Spieler; Breezes, Prüfungs-Omen und Detektoren verhalten sich wie in Vanilla.</li>
+  <li>Bauen geht schneller: falsche Blöcke auf der Baustelle werden entfernt, nicht setzbare Blöcke übersprungen, und Türen zeigen in die richtige Richtung.</li>
+  <li>Voice Packs und eigene Stimmen werden zuerst von GitHub Releases geladen, Modrinth ist der Rückfall.</li>
 </ul>
 
 <h2 id="fehlersuche">Fehlersuche</h2>
@@ -550,7 +557,7 @@ auf mehrere, kommt die normale Fehlermeldung.</p>
 <tr><td><code>/creator war list</code></td><td>alle</td><td>laufende und angebotene Kriege</td></tr>
 <tr><td><code>/creator war accept &lt;id&gt;</code></td><td>herausgeforderter Spieler</td><td>Krieg annehmen — die Siedlung verteidigt sich gegen dich</td></tr>
 <tr><td><code>/creator war decline &lt;id&gt;</code></td><td>herausgeforderter Spieler</td><td>ablehnen — ohne Folgen</td></tr>
-<tr><td><code>/creator war approve &lt;id&gt;</code></td><td>Operator</td><td>Krieg zwischen Siedlungen genehmigen</td></tr>
+<tr><td><code>/creator war approve &lt;id&gt;</code></td><td>Operator</td><td>Krieg zwischen Siedlungen genehmigen (nur mit war.requirePlayerApproval=true; sonst beginnt er nach Ablauf des Ultimatums)</td></tr>
 <tr><td><code>/creator war peace &lt;id&gt;</code></td><td>beteiligter Spieler / Operator</td><td>Frieden schließen</td></tr>
 <tr><td><code>/creator war surrender &lt;id&gt;</code></td><td>beteiligter Spieler / Operator</td><td>aufgeben</td></tr>
 <tr class=grp><th colspan=3>Vorschläge der Creator</th></tr>

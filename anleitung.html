@@ -267,37 +267,19 @@ und was es verhindert hätte.</p>
 <h2 id="neu">Neu</h2>
 <p>Seit <b>1.0</b> wird jedes Update auf unserem Live-Server geprüft: Creator, Aufträge, Truhen und Siedlungen müssen es überstehen. Vor Updates trotzdem die Welt sichern.
 Feedback und Fehlerberichte im <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#bugs, #ideas).</p>
-<h3>Neu in 1.0.7</h3>
+<h3>Neu in 1.0.8</h3>
 <ul>
-  <li>Siedlungen können sich jetzt verfeinden: Plündern, Grenzverletzung oder ein Angriff auf ein Mitglied bauen eine Feindschaft auf. Eine hungernde Siedlung plündert unter Umständen bei der Nachbarin Essen.</li>
-  <li>Vor einem Krieg gibt es ein Ultimatum von einem Spieltag. Der Krieg wird mit Titel, Raid-Horn und einer Bossbar mit Restzeit angekündigt und endet nach zwei Verlusten oder wenn eine Seite wehrlos ist.</li>
-  <li>Im Ultimatum kann eine schwache Seite die Beute zurückgeben. Im Krieg kann eine Siedlung ihre eigene Beute zurückholen, eine Palisade für eine Belagerung bauen oder den Streit in einem nicht tödlichen Champion-Duell mit Tribut-Vertrag beilegen.</li>
-  <li>Häuser werden im Krieg nie abgerissen, auch nicht die abwesender Mitglieder; zerstörbar sind nur Kriegsbauten.</li>
-  <li>Führer auf einer Kettenmission halten sich aus Kriegen heraus.</li>
-  <li>Streitkolben und Speer zählen jetzt als Waffe, wenn ein Creator prüft, ob er bewaffnet ist.</li>
-  <li>Serverbetreiber können verlangen, dass ein Spieler einem Krieg zustimmt (`requirePlayerApproval`, Standard aus).</li>
-  <li>Creator fliehen vor einem Spieler nur noch, wenn sie wirklich ein Fluchtmittel haben, und der Sprint zählt beim Tempovergleich nicht mehr doppelt.</li>
-  <li>Den Schild heben sie gegen einen geladenen Schlag nur, wenn der Angreifer sie auch erreicht.</li>
-  <li>Unbewaffnete Creator beginnen keinen Nahkampf gegen Spieler und verteidigen Verbündete nicht mehr mit bloßen Händen.</li>
-  <li>Aus dem Schildstand schlagen sie nach einer Weile auch ohne Öffnung zurück.</li>
-  <li>Hat eine Axt den Schild stillgelegt und ist der Spieler stärker, weicht ein Creator aus der Reichweite zurück, bis sein eigener Schlag geladen ist, statt Schläge zu tauschen.</li>
-  <li>Sind alle Eintrittsbedingungen erfüllt, gehen Führer auch nachts zu einem nahen Portal.</li>
-  <li>Eisen: Ein Feld-Gang bleibt offen, wenn ein Führer nur zum Nachfüllen unterbricht, und Führer merken sich Stellen, an denen ein Abstieg gescheitert ist, statt es immer wieder dort zu versuchen.</li>
-  <li>Eine auf dem Heimweg gebaute Holzhacke dient nur dem Heimweg; zum Abbau baut der Führer weiterhin eine richtige Hacke.</li>
-  <li>Mit verschlissener Hacke steigen Führer unter denselben Regeln heim wie beim Aufstieg aus einer Mine.</li>
-  <li>Nach einem Tod im Nether holen Führer zuerst wieder Gold, bevor sie zurückgehen.</li>
-  <li>An einem Gewittertag verlassen Führer den Unterschlupf nach der Tageszeit.</li>
-  <li>Die Baumsuche meidet Außenposten und Stellen, an denen ein Creator durch Pfeile starb.</li>
-  <li>Vergessene Festungssichtungen werden neu gemerkt.</li>
-  <li>Auf dem Heimweg starten Führer an der nächsten Wegmarke statt an der ersten, und eine Netherfestung gilt erst als besucht, wenn sie dort angekommen sind.</li>
-  <li>Stand und Landung folgen Vanilla: wo ein Creator steht, wo er aufkommt, wie viel ein Sturz schadet und wie lange Feuer brennt.</li>
-  <li>Stollen achten auf Lava, die von oben einfließt; die Flucht vor Lava nimmt den Weg mit den wenigsten Lavaschritten, und Höhlenziele liegen nie an Lava.</li>
-  <li>Führer laufen nicht mehr immer wieder an denselben tödlichen Strand voller Ertrunkener.</li>
-  <li>Der Gerüstabstieg klappt auch, wenn der Block über dem Kopf belegt ist, und das Gerüst wird wieder eingesammelt.</li>
-  <li>Mehrere Hänger an Kanten, Treppen und Säulen sind behoben.</li>
-  <li>Creator graben sich in Prüfungskammern ein wie ein Spieler; Breezes, Prüfungs-Omen und Detektoren verhalten sich wie in Vanilla.</li>
-  <li>Bauen geht schneller: falsche Blöcke auf der Baustelle werden entfernt, nicht setzbare Blöcke übersprungen, und Türen zeigen in die richtige Richtung.</li>
-  <li>Voice Packs und eigene Stimmen werden zuerst von GitHub Releases geladen, Modrinth ist der Rückfall.</li>
+  <li>Führer treten nicht mehr gleich nach dem Öffnen durchs Endportal. Ohne Bogen, genug Pfeile für die Kristalle (38) und Essen für zwei volle Heilungen öffnen sie das Portal zuerst, holen das Fehlende und kommen dann zurück.</li>
+  <li>Am offenen Portal stellen sie Bogen und Pfeile aus dem her, was in der Nähe ist (Hühner, Kies, Faden), statt für die Skelettjagd zurück in den Nether zu reisen.</li>
+  <li>Ohne Pfeile geht es nur noch hinein, nachdem mehrere Versuche, welche zu bekommen, gescheitert sind.</li>
+  <li>Im Drachenkampf wartet ein Führer nur dann auf Heilung, wenn er jetzt etwas essen kann oder von selbst regeneriert. Spinnenaugen oder Kugelfische halten ihn nicht mehr ewig in einer Ecke fest.</li>
+  <li>Führer pendeln nicht mehr auf Endermenjagd durch ein Portal hin und her: Bei Tag gehen sie nicht heim, um auf eine Nacht zu warten, die nicht kommt, und ein Portalgang ohne Fortschritt sperrt diese Route für eine Weile.</li>
+  <li>Ein Führer, der oben auf einer Wirrwald-Krone festhängt, lässt jetzt wirklich los und klettert herunter.</li>
+  <li>Bastionen werden auch dann gemieden, wenn das Ziel, etwa eine Festung, direkt daneben liegt. Nur ein Ziel in der Bastion selbst wird direkt angesteuert.</li>
+  <li>Auf der Flucht vor Lohen prüfen Führer jetzt mehrere Richtungen und nehmen den besten sicheren Stand außer Sicht aller Lohen, nie unter fallender Lava.</li>
+  <li>Neben Lava oder unter einem Lavafall werden keine Mauern und keine Heilkabinen mehr gebaut.</li>
+  <li>Ein Netherportal zählt nicht mehr als Siedlungsgebäude und dehnt den Stadtring nicht mehr aus. Vor Überbauung bleibt es geschützt.</li>
+  <li>Todes-Schnappschüsse halten jetzt Lava und Abgründe in der Nähe fest, den Kampf kurz vor dem Tod, was der Creator wusste, die Dimension und seine Haltung. Sie lassen sich als Test nachbauen.</li>
 </ul>
 
 <h2 id="fehlersuche">Fehlersuche</h2>

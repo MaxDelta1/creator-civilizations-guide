@@ -257,37 +257,19 @@ have prevented it.</p>
 <h2 id="new">New</h2>
 <p>Since <b>1.0</b> every update is checked on our live server: creators, missions, chests and settlements must survive it. Still, back up your world before updating.
 Feedback and bug reports on <a href="https://discord.gg/UhDS59wVWJ">Discord</a> (#bugs, #ideas).</p>
-<h3>New in 1.0.7</h3>
+<h3>New in 1.0.8</h3>
 <ul>
-  <li>Settlements can now fall out with each other: plundering, crossing borders or attacking a member builds up a feud. A starving settlement may raid a neighbour for food.</li>
-  <li>Before a war there is an ultimatum of one game day. The war is announced with a title, a raid horn and a boss bar with the time left, and it ends after two losses or when one side can no longer defend itself.</li>
-  <li>During an ultimatum, a weak side can hand the loot back. In a war, a settlement can try to win back its own loot, build a palisade for a siege, or settle it in a non-lethal champion duel with a tribute agreement.</li>
-  <li>Houses are never broken in a war, not even those of absent members; only war structures can be destroyed.</li>
-  <li>Leaders on a chain mission stay out of wars.</li>
-  <li>A mace or spear now counts as a weapon when a creator decides whether he is armed.</li>
-  <li>Server owners can require player approval before a war starts (`requirePlayerApproval`, default off).</li>
-  <li>Creators no longer flee from a player unless they really have a way to escape, and the sprint is no longer counted twice when they compare speed.</li>
-  <li>They raise the shield against a charged hit only when the attacker can actually reach them.</li>
-  <li>Unarmed creators do not start a melee against players and no longer join a fight just to defend an ally with bare hands.</li>
-  <li>A shield stance now strikes back after a while even without an opening.</li>
-  <li>When an axe has disabled his shield and the player is stronger, a creator backs off out of reach until his own swing is charged, instead of trading hits.</li>
-  <li>When all entry conditions are met, leaders also go to a nearby portal at night.</li>
-  <li>Mining for iron: a field dig stays open when a leader only stops to refill, and leaders remember places where a descent failed instead of trying the same spot again and again.</li>
-  <li>A wooden pickaxe made on the way home is only used for the way home; the leader still builds a proper pickaxe for mining.</li>
-  <li>With a worn pickaxe, leaders climb back home under the same rules as when climbing out of a mine.</li>
-  <li>After a death in the Nether, leaders fetch gold again before going back in.</li>
-  <li>Leaders leave a shelter on a stormy day by the time of day.</li>
-  <li>Tree search avoids outposts and places where a creator was killed by arrows.</li>
-  <li>Forgotten stronghold sightings are noted again.</li>
-  <li>On the way home, leaders start from the nearest trail mark instead of the first one, and a Nether fortress only counts as visited once they have actually arrived there.</li>
-  <li>Footing follows Vanilla: where a creator stands, where he lands, how much a fall hurts, and how long fire burns.</li>
-  <li>Tunnels watch for lava flowing in from above; escaping lava takes the path with the fewest lava steps, and cave targets are never next to lava.</li>
-  <li>Leaders no longer walk into the same deadly beach full of drowned again and again.</li>
-  <li>Climbing down scaffolding works even when the block above the head is taken, and the scaffolding is picked up again.</li>
-  <li>Several hangs at edges, stairs and pillars are fixed.</li>
-  <li>Creators can dig into trial chambers the way a player can; breezes, trial omen and detectors behave like Vanilla.</li>
-  <li>Building is faster: wrong blocks on a site are cleared, blocks that cannot be placed are skipped, and doors face the right way.</li>
-  <li>Voice packs and custom voices now download from GitHub Releases first, with Modrinth as fallback.</li>
+  <li>Leaders no longer step through the End portal straight after opening it. Without a bow, enough arrows for the crystals (38) and food for two full heals, they open the portal first, then fetch what is missing and come back.</li>
+  <li>At the open portal they craft a bow and arrows from what is nearby (chickens, gravel, string) instead of travelling back to the Nether to hunt skeletons.</li>
+  <li>Going in without arrows is only allowed after several failed attempts to get them.</li>
+  <li>During the dragon fight, a leader only waits to heal when he can actually eat something now or regenerates naturally. Spider eyes or pufferfish no longer keep him waiting in a corner until the end of time.</li>
+  <li>Leaders no longer shuttle back and forth through a portal hunting endermen: in daylight they do not go home to wait for a night that never comes, and a portal round trip without progress blocks that route for a while.</li>
+  <li>A leader stuck on top of a twisting-vine crown now actually lets go and climbs down.</li>
+  <li>Bastions are avoided even when the goal (for example a fortress) lies right next to one. Only a goal inside the bastion itself is approached directly.</li>
+  <li>When fleeing from blazes, leaders now check several directions and pick the best safe spot out of sight of all blazes, never under falling lava.</li>
+  <li>No walls or healing cabins are built next to lava or under a lava fall.</li>
+  <li>A Nether portal no longer counts as a settlement building, so it no longer stretches the city ring. It stays protected from being built over.</li>
+  <li>Death snapshots now record nearby lava and drops, the fight shortly before death, what the creator remembered, the dimension and his pose. They can be rebuilt as tests.</li>
 </ul>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
